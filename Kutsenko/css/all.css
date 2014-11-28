@@ -1,0 +1,79 @@
+body{
+	margin: 0;
+	color: #171717;
+	font: 14px Georgia;
+	line-height: 20px;
+	background: #f4f2ee;
+}
+#header {
+	width:100%;
+	background: url(../images/head-bg.png) repeat-x;
+}
+#main {
+	margin:0 auto;
+	width:960px;
+}
+.container {
+	margin:0 auto;
+	width:960px;
+}
+.container:after{	
+	content:'';
+	display: block;
+	clear: both;
+}
+.logo {
+	background: url(../images/logo.png) no-repeat;
+	width: 251px;
+	height: 87px;
+	text-indent: -9999px;
+	margin-bottom: -15px;
+	float: left;
+	overflow: hidden;
+
+}
+.logo a{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+nav {
+	float:right;
+	overflow: hidden;
+}
+nav ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+nav ul li{
+	float: left;
+}
+nav ul li a{
+	float: right;
+	text-transform: uppercase;
+	color: #f4f2ee;
+	font-family: Birch Std;
+	font-size: 20px;
+	line-height: 44px;
+	padding: 20px 0 0 25px;
+	text-decoration:none;
+}
+.main-header {
+	margin-top:51px;
+	background: url(../images/headline.png) repeat-x, url(../images/head-sep.png) repeat-x 	0 100%;
+	text-align:center;
+	padding-top:10px;
+}
+.main-header  h1 {
+	font-weight:normal;
+	font-size:28px;
+}
+article {
+	background: url(../images/headline.png) repeat-x, url(../images/head-sep.png) repeat-x 	0 100%;
+	
+}
+article h2 {
+	font-size:28px;
+	padding
+}
