@@ -1,9 +1,0 @@
-1)Create a folder and name it according you last name 
-2)Add html file into your folder
-3)Commit it
-4)Change html file
-5)Check status and difference
-6)Add new txt file
-7)Check status and difference
-8)Commit only html changes
-9)Push you commits and create pull request
