@@ -7,8 +7,8 @@ multiplicationTableHolder.innerHTML = render(multiplicationTable(10));
 pascalTriangleHolder.innerHTML = render(pascal(10));
 
 function multiplicationTable(size) {
-    var table = [];
-    // @todo
+	var table = [];
+	 // @todo	
     return table;
 }
 
