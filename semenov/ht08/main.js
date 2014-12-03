@@ -23,8 +23,36 @@ function multiplicationTable(size) {
 }
 
 function matrix (size) {
-    var matrix = [];
-    // @todo
+			var size = 10;
+			var matrix = [];
+			var i;
+			var j;
+			
+			for (i = 0; i <size; i++) {
+				matrix[i] = [];
+			
+				for (j = 0; j < size; j++) {
+					if (j === i) {
+						matrix[i][j] = 1;
+						
+					} else if (j === (size - 1 - i)) {
+						matrix[i][j] = 2;
+						
+					} else if (j > i && j < (size - 1 - i)){
+						matrix[i][j] = 3;
+						
+					} else if (j < i && j < (size - 1 - i)){
+						matrix[i][j] = 6;
+						
+					} else if (j < i && j > (size - i - 1)){
+						matrix[i][j] = 5;
+						
+					} else {
+						matrix[i][j] = 4;
+					}
+				}
+			}
+		
     return matrix;
 }
 
