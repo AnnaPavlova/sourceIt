@@ -8,7 +8,17 @@ pascalTriangleHolder.innerHTML = render(pascal(10));
 
 function multiplicationTable(size) {
     var table = [];
-    // @todo
+    var i, j, row;
+	
+	for(i = 1; i <= size; i++){
+		row = [];
+		for(j = 1; j <= size; j++){
+			row.push(i* j);
+		}
+		
+		table.push(row);
+	}
+	
     return table;
 }
 
