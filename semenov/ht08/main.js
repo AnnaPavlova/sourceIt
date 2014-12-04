@@ -11,10 +11,10 @@ function multiplicationTable(size) {
 		var i;
 		var j;				
 		
-		for (i = 0; i < 10;i++) {
+		for (i = 0; i < size; i++) {
 			table[i] = [];
 			
-			for (j = 0; j < 10; j++){			
+			for (j = 0; j < size; j++){			
 				table[i][j] = ((i + 1) * (j + 1));
 			}		
 			
@@ -23,7 +23,6 @@ function multiplicationTable(size) {
 }
 
 function matrix (size) {
-			var size = 10;
 			var matrix = [];
 			var i;
 			var j;
@@ -58,7 +57,21 @@ function matrix (size) {
 
 function pascal (size) {
     var triangle = [];
-    // @todo
+    var i;
+	var j;	
+		
+		for (i = 0; i < size; i++) {
+			triangle[i] = [];
+			
+			for (j = 0; j <= i; j++){		
+				if (j == 0 || j === i){
+					triangle[i][j] = 1;
+					
+				} else {				
+				triangle[i][j] = triangle[i-1][j-1] + triangle[i-1][j];
+				}
+			}					
+		}
     return triangle;
 }
 

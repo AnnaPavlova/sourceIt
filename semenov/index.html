@@ -6,16 +6,21 @@
 	<script>
 		var i;
 		var j;
-		var col = [];
-		var raw = [];
+		var pascal = [];
 		
 		for (i = 0; i < 10;i++) {
-		
-			for (j = 0; j < 10; j++){			
-				raw[j] = (i + 1) * (j + 1);
+			pascal[i] = [];
+			
+			for (j = 0; j <= i; j++){		
+				if (j == 0 || j === i){
+					pascal[i][j] = 1;
+					
+				} else {				
+				pascal[i][j] = pascal[i-1][j-1] + pascal[i-1][j];
+				}
 			}		
-			col.push(raw);
-			console.log(col[i]);
+			
+			console.log(pascal[i]);
 		}
 	</script>
 </body>
