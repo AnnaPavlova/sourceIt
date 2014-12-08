@@ -32,14 +32,17 @@ function pascal (size) {
     var i;				
 	var j;
 	
-	for (i = 0; i < 9; i++){
+	for (i = 0; i < 10; i++){
 	triangle[i] = [];
+	triangle[i][0]= 1;
 
 			for (j = 1; j <= i; j++){
-			triangle[i][j] = triangle[i-1][j-1] + triangle[i-1][j];
+				if (j == i){
+					triangle[i][j] = 1;
+				} else {
+					triangle[i][j] = triangle[i-1][j-1] + triangle[i-1][j];
+				}	
 			}
-		triangle[i][j] = 1;
-		triangle[i][0]= 1;
 	}
     return triangle;
 }
@@ -53,4 +56,20 @@ function render (array) {
     }
     return result.join('');
 }
-a/lert("Test");
+/*alert("Test");
+function pascal (size) {
+    var triangle = [];
+    var i;				
+	var j;
+	
+	for (i = 0; i < 9; i++){
+	triangle[i] = [];
+	triangle[i][0]= 1;
+			for (j = 1; j <= i; j++){
+			triangle[i][j] = triangle[i-1][j-1] + triangle[i-1][j];
+			}
+		triangle[i][j] = 1;
+		
+	}
+    return triangle;
+}*/
