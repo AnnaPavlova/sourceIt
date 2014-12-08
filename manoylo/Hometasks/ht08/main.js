@@ -64,7 +64,23 @@ function matrix (size) {
 
 function pascal (size) {
     var triangle = [];
-    // @todo
+    
+	var val;
+    for(var i = 0; i < size; i++){
+		triangle[i] = [];
+
+        for(var j = 0; j <= i; j++){
+		
+			if((i+j) == i || i <= j){
+				 triangle[i][j] = 1;
+			}
+			
+			else{
+				 triangle[i][j] = j + j;
+			}
+        }
+    }
+	
     return triangle;
 }
 
