@@ -13,7 +13,7 @@ function multiplicationTable(size) {
 	for(i = 1; i <= size; i++){
 		row = [];
 		for(j = 1; j <= size; j++){
-			row.push(i * j);
+			row.push(i*j);
 		}
 		
 		table.push(row);
@@ -25,12 +25,58 @@ function multiplicationTable(size) {
 function matrix (size) {
     var matrix = [];
 
+	var val;
+    
+	for(var i = 0; i < size; i++){
+		matrix[i] = [];
+		
+		for(var j = 0; j < size; j++){
+
+			if (i == j) {
+                val = 1;
+            }
+
+            else if( (size - i - 1) == j){
+				val = 2;
+			}
+			
+			else if(i < j && i < (size - j) ) {
+				val = 3;
+			}
+			
+			else if(i < j) {
+				val = 4;
+			}
+			
+			else if(i > j && (size - i) <= j){
+				val = 5;
+			}
+			
+			else if(i > j && (size - i) > j) {
+				val = 6;
+			}
+			
+			matrix[i][j] = val;
+		}
+	}
+
     return matrix;
 }
 
 function pascal (size) {
     var triangle = [];
-    // @todo
+    
+	var val;
+    for(var i = 0; i < size; i++){
+		triangle[i] = [];
+
+        for(var j = 0; j <= i; j++){
+			
+			triangle[i][j] = 1;
+			
+        }
+    }
+	
     return triangle;
 }
 
