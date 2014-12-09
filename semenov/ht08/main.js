@@ -15,7 +15,7 @@ function multiplicationTable(size) {
 			table[i] = [];
 			
 			for (j = 0; j < size; j++){			
-				table[i][j] = ((i + 1) * (j + 1));
+				table[i][j] = (i + 1) * (j + 1);
 			}		
 			
 		}
@@ -43,7 +43,7 @@ function matrix (size) {
 					} else if (j < i && j < (size - 1 - i)){
 						matrix[i][j] = 6;
 						
-					} else if (j < i && j > (size - i - 1)){
+					} else if (j < i && j >= (size - i)){
 						matrix[i][j] = 5;
 						
 					} else {

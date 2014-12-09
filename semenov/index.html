@@ -2,26 +2,7 @@
 <head>
 </head>
 <body>
-	<p id="demo"></p>
-	<script>
-		var i;
-		var j;
-		var pascal = [];
-		
-		for (i = 0; i < 10;i++) {
-			pascal[i] = [];
-			
-			for (j = 0; j <= i; j++){		
-				if (j == 0 || j === i){
-					pascal[i][j] = 1;
-					
-				} else {				
-				pascal[i][j] = pascal[i-1][j-1] + pascal[i-1][j];
-				}
-			}		
-			
-			console.log(pascal[i]);
-		}
-	</script>
+	
+	
 </body>
 </html>
