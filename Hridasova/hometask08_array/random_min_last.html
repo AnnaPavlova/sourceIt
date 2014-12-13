@@ -1,0 +1,42 @@
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=8">
+</head>
+<body>
+
+<script>
+	var arr = [];
+	var n;
+	var pos;
+	var tmp;
+	function getRandomInt(min, max) {
+		return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+	function randomEx(size) {
+		for (i = 0; i < size; i++) {
+			arr [i] = getRandomInt(1, 100);
+		}
+		for (i = 0; i < size; i++) {
+			if (arr[i] <= arr[i + 1]) {
+				n = arr[i];
+				break;
+			}
+		}
+		for (i = 0; i < size; i++) {
+			if (n >= arr[i]) {
+				n = arr[i];
+				pos = i;
+			}
+		}
+			tmp = arr[pos];
+			arr[pos] = arr[size - 1];
+			arr[size - 1] = tmp;
+		
+		return arr;
+	}
+  	var x = randomEx(10);
+	document.writeln(x);
+</script>
+
+</body>
+</html>
