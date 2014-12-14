@@ -19,7 +19,7 @@ function multiplicationTable(size) {
 }
 function matrix (size) {
     var matrix = [];
-// @todo
+    // @todo
     return matrix;
 }
 function pascal (size) {
