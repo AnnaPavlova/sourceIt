@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .error {
+            border: 1px solid #f00;
+        }
+        .success {
+            color: #008000;
+        }
+    </style>
+</head>
+<body>
+    <div id="sort"></div>
+    <div id="list"></div>
+    <div id="headings"></div>
+    <form id="form" action="#" onsubmit="simpleValidation(form)">
+        <fieldset>
+            <legend>Simple validation</legend>
+            <label for="first-name">First Name</label> <input id="first-name" type="text" placeholder="Enetr your first name"/>
+            <label for="last-name">Last Name</label><input id="last-name" type="text" placeholder="Enter yuor last name"/>
+            <button type="submit">Submit</button>
+        </fieldset>
+    </form>
+    <script src="js/main.js"></script>
+    <script>
+
+        function simpleValidation() {
+            var fName = document.getElementById("first-name").value;
+            var lName = document.getElementById("last-name").value;
+            if(fName == ""){
+                document.getElementById("first-name").classList.add("error");
+            }
+            else{
+                document.getElementById("first-name").classList.remove("error");
+            }
+            if(lName == ""){
+                document.getElementById("last-name").classList.add("error");
+            }
+            else{
+                document.getElementById("last-name").classList.remove("error");
+            }
+            if(fName !== "" && lName !== ""){
+                var successMessage = document.createElement("p");
+
+                var successText = document.createTextNode("Thank You!");
+
+                successMessage.appendChild(successText);
+
+                var successWrap = document.getElementById("form");
+
+                successWrap.appendChild(successMessage).classList.add("success");
+
+            }
+
+        }
+    </script>
+
+</body>
+</html>
