@@ -1,6 +1,6 @@
 (function(){
 	var arr = [1,2,[3,4,[6,7,8],9],10,11];
-	var n = 1;
+	var i, n = 1;
     function bubbleSort(data) {
         var arr = data.slice()
         for (var i = 0; i < arr.length - 1; i++) {
@@ -61,7 +61,8 @@
 
     function recursiveHeadings (data, weight) {
 		var k =	document.getElementById("headings");
-		for (var i = 0; i < data.length; i++) {
+		var max = data.length;
+		for (i = 0; i < max; i++) {
 				if (typeof data[i] == "number") {
 					var para = document.createElement("h" + weight);
 					var node = document.createTextNode(data[i]);
@@ -79,23 +80,30 @@
 		//Если оба поля заполнены, вывести сообщение об удачной отправке формы
 		
 		var input = document.getElementsByTagName("input");
-		var i;
-		document.getElementsByType("submit").addEventListener("click", validator);
-		alert(input[0]);
+		var max = input.length;		
+		document.getElementById("submit").addEventListener("click", validator);		
 		function validator () {
-			alert("Hello");
-			/*for (i = 0, var max = input.length; i < max; i++) {
-				if (document.getElementByTagName("input")[i].value;) {
-					
+			var v = 0;
+			for (i = 0; i < max; i++) {
+				if (input[i].value) {
+					document.getElementsByTagName("input")[i].removeAttribute("style");
+					v++;
+				} else {
+					input[i].setAttribute("style", "border-color: #ff0000");
 				}
-			}*/
-		}
-		
+			}
+			if (v === max) {
+				for (i = 0; i < max; i++) {
+					document.getElementsByTagName("input")[i].removeAttribute("style");
+				}
+				alert ("All OK!");
+			}
+		}		
     }
 	
 	//вызывать функции здесь!
     sortHandler();
 	recursiveList(arr);
 	recursiveHeadings(arr, n);
-	simpleValidation(form);
+	simpleValidation();
 })();
