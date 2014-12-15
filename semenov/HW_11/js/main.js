@@ -1,6 +1,7 @@
 (function(){
 	var arr = [1,2,[3,4,[6,7,8],9],10,11];
 	var i, n = 1;
+	var ul = document.createElement("ul");
     function bubbleSort(data) {
         var arr = data.slice()
         for (var i = 0; i < arr.length - 1; i++) {
@@ -37,22 +38,19 @@
         //@todo отобразить все элементы массива массивов в виде вложенных списков соблюдая вложенность
 		//исходный массив [1,2,[3,4,[6,7,8],9],10,11]
 		
-			var list = document.getElementById("list");
-			var ul = document.createElement("ul");	
+			var list = document.getElementById("list");				
 			var li;
-		
 			for (var i = 0; i < data.length; i++) {
-				if (typeof data[i] == "number") {
 					li = document.createElement("li");
+				if (typeof data[i] == "number") {					
 					li.appendChild(document.createTextNode(data[i]));
 					ul.appendChild(li);
 				} else {
-					li = document.createElement("li");
-					ul.appendChild(li);
-					var innerUl = document.createElement("ul");
-					li.appendChild(innerUl);	
-					recursiveList(data[i]);
-					console.log(data[i]);
+					var inUl = document.createElement("ul");
+					//inUl.setAttribute("id", "inner" + n++);
+					li.appendChild(inUl);
+					ul.appendChild(li);		
+					recursiveList(data[i]);	
 				}
 			}
 			list.appendChild(ul);
