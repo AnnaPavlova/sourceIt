@@ -24,6 +24,7 @@ function multiplicationTable(size) {
 
 function matrix (size) {
     var matrix = [];
+
 	var val;
     
 	for(var i = 0; i < size; i++){
@@ -58,7 +59,7 @@ function matrix (size) {
 			matrix[i][j] = val;
 		}
 	}
-	
+
     return matrix;
 }
 
@@ -70,8 +71,10 @@ function pascal (size) {
 		triangle[i] = [];
 
         for(var j = 0; j <= i; j++){
+		
 			triangle[i][j] = 1;
-		}
+			
+        }
     }
 	
     return triangle;
