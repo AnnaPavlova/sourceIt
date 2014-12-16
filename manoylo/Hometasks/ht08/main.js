@@ -66,12 +66,12 @@ function matrix (size) {
 function pascal (size) {
     var triangle = [];
     
-	var val;
+	var val, a, b;
     for(var i = 0; i < size; i++){
 		triangle[i] = [];
 
         for(var j = 0; j <= i; j++){
-			
+		
 			triangle[i][j] = 1;
 			
         }
