@@ -32,54 +32,63 @@
     }
 	var arr = [1,2,[3,4,[6,7,8],9],10,11];
 	var i, size = 1;
-    function recursiveList (data) {
-		var leng = data.length;
-		var ul = document.createElement('ul');
-		var list = document.getElementById('list');
-		for (i = 0; i < leng; i++) {
-			var para = document.createElement('li');
-			var node = document.createTextNode(data[i]);
-			para.appendChild(node);
-			if(typeof (data[i]) == 'number') {
-				list.appendChild(para);
-			} else if(typeof (data[i]) !== 'number') {
-				ul.appendChild(para);
-				list.appendChild(ul);
-				recursiveList(data[i]);	
-				}
-		}
-    }
-    function recursiveHeadings (data, weight) {
-		var leng = data.length;
-		var element = document.getElementById('headings');
-		for (i = 0; i < leng; i++) {
-			if (typeof (data[i]) == 'number') {
-				var para = document.createElement('h' + weight);
-				var node = document.createTextNode(data[i]);
-				para.appendChild(node);
-				element.appendChild(para);
+	
+	function recursiveList (data) {
+		var list = document.createElement('ul');
+		for (var i = 0; i < data.length; i++) {
+		console.log('data[i]', data[i]);
+			var item = document.createElement('li');
+			if(typeof data[i] == 'object') {
+				var subList = recursiveList(data[i]);
+				item.appendChild(subList);
 			} else {
-				recursiveHeadings (data[i], weight + 1);
+					item.innerHTML = data[i];
 				}
+			console.log(item);
+			list.appendChild(item);
 		}
-		return element;
+		return list;
+	}
+	var listHolder = document.getElementById('list');
+	listHolder.appendChild(recursiveList(arr));
+	
+  
+    function recursiveHeadings (data, weight) {
+		weight = weight || 1;
+		var fragment = document.createDocumentFragment();
+		for (var i = 0; i < data.length; i++) {			
+			var title = document.createElement('h' + weight);
+			if(typeof data[i] === 'object') {
+				fragment.appendChild(recursiveHeadings(data[i], weight + 1));
+			} else{
+				title.innerHTML = data[i];
+			}
+			fragment.appendChild(title);
+		}
+		return fragment;
 	}
 
-    function simpleValidation() {
-	var nameHolder = document.getElementsByTagName('input').value;
-	document.getElementsByTagName('button').addEventListener('click', checkF);
-		function checkF() {
-			if (nameHolder == '') {
-				document.getElementsByName('input').style.borderColor = '#ee2327';
-				document.getElementsByName('input').style.borderWidths = '2px';
-			} else {
-				document.getElementsByName('input').style.border = 'none';
+    function simpleValidation(form) {
+		var inputs = form.getElementsByTagName('input');
+		form.addEventListener('submit', function (ev) {
+			ev.preventDefault();
+			var error = false;
+			for (var i = 0; i < inputs.length; i++) {
+				var color = '';
+				if (!inputs[i].value) {
+					color = 'red';
+					error = true;
 				}
-		}
+				inputs[i].setAttribute('style', 'border-color: ' + color);
+			}
+			if(!error){
+				alert('Good work');
+			}
+		})
 	}
 	
 	//вызывать функции здесь!
-	recursiveList(arr);
-	recursiveHeadings(arr, size);
+	simpleValidation(document.getElementById('form')); 
+	document.getElementById('headings').appendChild(recursiveHeadings(arr));
     sortHandler();
 })();
