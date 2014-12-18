@@ -4,25 +4,38 @@
         <meta charset="utf-8">
         <title>JavaScript learn</title>
     </head>
-    <body>
-	<p id="demo">A paragraph</p>
 	
-<<<<<<< HEAD
-	<script>
-		for(var var12 = 0; var12 < 10; var12++){
-			if(var12 == 5 || var12 == 8){
-				continue;
-			}
-			
-			console.log("Numbers: " + var12);
+	<style>
+		#demo{
+			margin: 100px auto;
+			width: 150px;
+			height: 150px;
+			box-shadow: 0 4px 23px 5px rgba(0, 0, 0, 0.2), 0 2px 6px rgba(0, 0, 0, 0.15);
+			text-align: center;
+			line-height: 150px;
 		}
-=======
+	</style>
 	
+    <body>
+	<div id="demo" onmousedown="mOver(this);" onmouseup="mOut(this);">Click me!</div>
+	
+		
 	<script>
 		
+		function mOver(obj){
+			obj.innerHTML = "Wow you click me!";
+			obj.style.background = "yellow";
+			obj.style.color = "red";
+			obj.style.fontWeight = "bold";
+		}
 		
+		function mOut(obj){
+			obj.innerHTML = "Click me!";
+			obj.style.background = "#fff";
+			obj.style.color = "#000";
+			obj.style.fontWeight = "normal";
+		}
 		
->>>>>>> 0c76fe01e0657eece8639d36a1732756c0a2e383
 	</script>
     </body>
 </html>
