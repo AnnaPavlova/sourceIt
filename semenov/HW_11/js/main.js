@@ -1,7 +1,5 @@
-(function(){
-	var arr = [1,2,[3,4,[6,7,8],9],10,11];
+(function(){	
 	var i, n = 1;
-	var ul = document.createElement("ul");
     function bubbleSort(data) {
         var arr = data.slice()
         for (var i = 0; i < arr.length - 1; i++) {
@@ -35,27 +33,21 @@
     }
 
     function recursiveList (data) {
-        //@todo отобразить все элементы массива массивов в виде вложенных списков соблюдая вложенность
-		//исходный массив [1,2,[3,4,[6,7,8],9],10,11]
-		
-			var list = document.getElementById("list");				
-			var li;
+		var list = document.createElement('ul');
 			for (var i = 0; i < data.length; i++) {
-					li = document.createElement("li");
-				if (typeof data[i] == "number") {					
-					li.appendChild(document.createTextNode(data[i]));
-					ul.appendChild(li);
+					var li = document.createElement("li");					
+				if (typeof data[i] == "number") {	
+					li.innerHTML = data[i];
 				} else {
-					var inUl = document.createElement("ul");
-					//inUl.setAttribute("id", "inner" + n++);
-					li.appendChild(inUl);
-					ul.appendChild(li);		
-					recursiveList(data[i]);	
+					li.appendChild(recursiveList(data[i]));			
 				}
+				list.appendChild(li);
 			}
-			list.appendChild(ul);
         return list;
     }
+		var arr = [1,2,[3,4,[6,7,8],9],10,11];
+		var listHolder = document.getElementById("list");
+		listHolder.appendChild(recursiveList(arr));
 
     function recursiveHeadings (data, weight) {
 		var k =	document.getElementById("headings");
@@ -68,6 +60,10 @@
 					k.appendChild(para);
 				} else {					
 					recursiveHeadings(data[i], weight + 1);
+					var para = document.createElement("h" + weight);
+					var node = document.createTextNode(data[i]);
+					para.appendChild(node);
+					k.appendChild(para);
 				}
 			}
     }
@@ -80,14 +76,16 @@
 		var input = document.getElementsByTagName("input");
 		var max = input.length;		
 		document.getElementById("submit").addEventListener("click", validator);		
-		function validator () {
+		function validator (ev) {
+			ev.preventDefault();
 			var v = 0;
 			for (i = 0; i < max; i++) {
 				if (input[i].value) {
-					document.getElementsByTagName("input")[i].removeAttribute("style");
+					input[i].removeAttribute("style");
 					v++;
 				} else {
 					input[i].setAttribute("style", "border-color: #ff0000");
+					
 				}
 			}
 			if (v === max) {
@@ -101,7 +99,6 @@
 	
 	//вызывать функции здесь!
     sortHandler();
-	recursiveList(arr);
 	recursiveHeadings(arr, n);
-	simpleValidation();
+	simpleValidation(document.getElementById('form'));
 })();
