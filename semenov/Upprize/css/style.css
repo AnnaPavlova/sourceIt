@@ -58,7 +58,7 @@ header, footer, article, section, hgroup, nav, figure { display: block; }
 .header-bar{
 	background: #00345d;
 	-webkit-border-radius: 0 0 12px 12px;
-	border-radius: 0 0 12px 12px;	
+	border-radius: 0 0 16px 16px;	
 	overflow: hidden;
 }
 .social-autorized{
@@ -115,6 +115,7 @@ header, footer, article, section, hgroup, nav, figure { display: block; }
 	border-bottom: 1px dotted #4f9fe4;
 }
 .ad{
+	font-family: Arial Regular;
 	margin: 10px 0 10px 66px;
 	display: inline-block;
 	width: 253px;
@@ -152,7 +153,7 @@ header, footer, article, section, hgroup, nav, figure { display: block; }
 	height: 95px;
 	background: #ffffff;
 	overflow: auto;
-	border-radius: 12px;
+	border-radius: 16px;
 }
 .header-nav h1 {
 	font-size: 0;
@@ -166,9 +167,51 @@ header, footer, article, section, hgroup, nav, figure { display: block; }
 	float: left;
 	margin: 29px 0 0 33px;
 	font-size: 0;
+	background: #1199e5;
+	border-radius: 16px;
 }
 #nav a {
 	font-size: 20px;
 	display: inline-block;
 	font-family: Myriad Pro Condensed;
+	color: #ffffff;
+	padding: 5px 25px 7px 24px;
+}
+#nav a:last-child{
+	padding-right: 42px;
+}
+#nav a.active {
+	position: relative;
+	background: #f47a24;
+}
+#nav a.active:after {
+	content: '';
+    position: absolute;
+    background: inherit;     
+	bottom: -4px;
+	left: 45%;
+    width: 8px; 
+	height: 8px;       
+    transform: rotate(45deg);
+}
+.small-banner {
+	overflow: auto;
+	background: #f47a24;
+}
+.small-banner .banner-content {
+	padding: 18px 20px 11px 19px;
+	width: 636px;
+}
+.small-banner .banner-content h3 {
+	margin: 0;
+	font-family: Myriad Pro;
+	font-size: 27px;
+	float: left;
+}
+.small-banner .banner-content .banner-info {
+	width: 434px;
+	float: left;
+}
+.small-banner .banner-content .banner-info span {
+	float: left;
 }

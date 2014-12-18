@@ -56,8 +56,42 @@ function initAnimation(newWidth){
 
 //animation2 function init
 function initAnimation2(newWidth){
-
-	//@todo
+	var container = document.getElementById('container2');
+	var element = byClass('box', container)[0];
+	var btnStart = byClass('go', container)[0];
+	var btnStop = byClass('stop', container)[0];
+	var btnBack = byClass('back', container)[0];
+	var elementWidth = element.offsetWidth;
+	var originalWidth = element.offsetWidth;
+	var index;
+	
+	function startAnim() {
+		if (elementWidth < newWidth){
+			index = setTimeout(function() {
+				elementWidth += 1;
+				element.style.width = elementWidth + "px";
+				startAnim();
+			}, 10);
+		
+		}
+	}
+	function backAnim() {
+		if (elementWidth > originalWidth){
+			index = setTimeout(function() {
+				elementWidth -= 1;
+				element.style.width = elementWidth + "px";
+				backAnim();
+			}, 10);
+		
+		}
+	}	
+	btnStart.addEventListener('click', startAnim);
+	
+	btnBack.addEventListener('click', backAnim);	
+	
+	btnStop.addEventListener('click', function(){
+		clearTimeout(index);
+	});
 }
 
 if (window.addEventListener)
