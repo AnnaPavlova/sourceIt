@@ -28,31 +28,58 @@ function byClass(classList, node) {
   return result;
  }
 }
+
 var sign;
+var firstValue;
+var secondValue;
+var resultValue;
+var result;
+var i;
+
 function initCalc(){
 	var container = document.getElementById('container');
 	var calcBtn = byClass('btn-calc', container)[0];
 	var element = byClass('operator', container);
-	var i;
-	
-	
+		
 	for(i = 0; i < element.length; i++ ){
 		element[i].onclick = function(e){
 			e.preventDefault()
 			sign = this.innerHTML;
-			this.style.border = "1px solid green"
+			this.style.border = "1px solid green";
 		}
+		
+		element[i].style.border = "1px solid red";
 	}
 	
 	calcBtn.addEventListener('click', calc);
 }
 
 function calc(){
-	var firstValue = parseInt(document.getElementById("first-value").value);
-	var secondValue = parseInt(document.getElementById("second-value").value);
-	//var result =  firstValue sign secondValue;
+	firstValue = parseInt(document.getElementById("first-value").value);
+	secondValue = parseInt(document.getElementById("second-value").value);
+	resultValue = document.getElementById("result");
 
-	console.log(result);
+	switch (sign){
+			case "+":
+			result = firstValue + secondValue;
+			break;
+			
+			case "-":
+			result = firstValue - secondValue;
+			break;
+			
+			case "*":
+			result = firstValue * secondValue;
+			break;
+			
+			case "/":
+			result = firstValue / secondValue;
+			break;
+			default:
+			result = "enter value for calculation";
+		}
+
+	resultValue.value = result;
 }
 
 if (window.addEventListener)
