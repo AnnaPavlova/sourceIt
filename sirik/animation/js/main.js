@@ -74,16 +74,21 @@ function initAnimation2(newWidth){
 			}, 10);
 		}	
 	}
+	function backAnim(){
+		if(elementWidth > back){
+			index = setTimeout(function() {
+			elementWidth -= 1;
+			element.style.width = elementWidth + "px";
+			backAnim()
+			},10);
+		}
+	}
 	
 	btnGo.addEventListener('click', startAnim);
 	btnStop.addEventListener('click', function(){
 		clearTimeout(index);
 	});
-	btnBack.addEventListener('click', function(){
-		elementWidth = back; 
-		element.style.width = back + "px";
-		// clearTimeout(index); // if we wonna stop and back
-	});
+	btnBack.addEventListener('click', backAnim);
 }
 
 if (window.addEventListener)
