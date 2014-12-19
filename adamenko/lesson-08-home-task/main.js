@@ -1,29 +1,32 @@
 var multiplicationTableHolder = document.getElementById('multiplication-table');
 var matrixHolder = document.getElementById('matrix');
 var pascalTriangleHolder = document.getElementById('pascal-triangle');
+matrixHolder.innerHTML = render(matrix(10));
 
-matrixHolder.innerHTML =  render(matrix(10));
 multiplicationTableHolder.innerHTML = render(multiplicationTable(10));
+
 pascalTriangleHolder.innerHTML = render(pascal(10));
 
 function multiplicationTable(size) {
-	var table = [];
-	 // @todo	
+    var table = [];
+    for (var i = 0; i < size; i++){
+        table[i] = [];
+        for (var m = 0; m < size; m++){
+            table[i][m] = ((i + 1) * (m + 1));
+        }
+    }
     return table;
 }
-
 function matrix (size) {
     var matrix = [];
     // @todo
     return matrix;
 }
-
 function pascal (size) {
     var triangle = [];
-    // @todo
+// @todo
     return triangle;
 }
-
 function render (array) {
     var rowsQty = array.length;
     var result = [];
