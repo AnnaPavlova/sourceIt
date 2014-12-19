@@ -43,3 +43,4 @@ window.onload = function simpleCalc() {
 
     };
 }
+// ***

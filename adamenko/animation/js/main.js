@@ -150,3 +150,4 @@ if (window.addEventListener)
 	window.addEventListener("load", initPage, false);
 else if (window.attachEvent)
 	window.attachEvent("onload", initPage);
+// ***
