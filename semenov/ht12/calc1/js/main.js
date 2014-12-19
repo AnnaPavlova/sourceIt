@@ -1,41 +1,21 @@
 var links = document.getElementById('operators').getElementsByTagName('a');
-var i, 
+var i, j,
 max = links.length,
-oper;
-links[0].addEventListener("click", function () {
-	links[0].setAttribute("style", "border-color: black");
-	oper = links[0].getAttribute('href');
-	links[1].removeAttribute("style");
-	links[2].removeAttribute("style");
-	links[3].removeAttribute("style");	
-});
-links[1].addEventListener("click", function () {
-	links[1].setAttribute("style", "border-color: black");
-	oper = links[1].getAttribute('href');	
-	links[0].removeAttribute("style");
-	links[2].removeAttribute("style");
-	links[3].removeAttribute("style");
-});
-links[2].addEventListener("click", function () {
-	links[2].setAttribute("style", "border-color: black");
-	oper = links[2].getAttribute('href');
-	links[0].removeAttribute("style");
-	links[1].removeAttribute("style");
-	links[3].removeAttribute("style");
-});
-links[3].addEventListener("click", function () {
-	links[3].setAttribute("style", "border-color: black");
-	oper = links[3].getAttribute('href');
-	links[0].removeAttribute("style");
-	links[1].removeAttribute("style");
-	links[2].removeAttribute("style");
-});
+operation;
+for (i = 0; i < max; i++) {	
+	links[i].onclick = function(e) {
+		for (j = 0; j < max; j++){
+			links[j].removeAttribute("style");
+		}
+		e.preventDefault();
+		operation = this.innerHTML; /* не совсем понял как это работает*/
+		this.setAttribute("style", "border-color: black");
+	}
+}
 document.getElementById('calculate').addEventListener("click", function () {
 	var res,
 	fValue = parseInt(document.getElementById('first-value').value, 10),
-	sValue = parseInt(document.getElementById('second-value').value, 10),
-	operation = oper;
-	
+	sValue = parseInt(document.getElementById('second-value').value, 10);	
 	switch (operation) {
 		case '+':
 			res = fValue + sValue;
