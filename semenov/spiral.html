@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+	<p id="demo"></p>
+	<script>
+		function spiral(x, y) {
+			var arr = [];
+			var i, j;
+			var number = 0;
+			var deep;
+			var maxDeep = x < y ? (x-2): (y-2);
+			
+			for (i=0; i < y; i++){
+				arr[i] = [];
+				
+				for (j=0; j < x; j++){
+					arr[i][j] = 0;
+				}
+			}
+			
+			for(deep=0; deep < maxDeep; deep++){
+				i = 0;
+				j = 0;
+				while (arr[deep][x-deep-1] == 0) {
+					arr[i+deep][j+deep] = ++number;
+					j++;
+				}
+				j--;
+				i++;
+				
+				while (arr[y-deep-1][x-deep-1] == 0) {
+					arr[i+deep][j+deep] = ++number;
+					i++;
+				}
+				i--;
+				j--;
+				while (arr[y-deep-1][deep] == 0) {
+					arr[i+deep][j+deep] = ++number;
+					j--;
+				}
+				j++;
+				i--;
+				while (arr[deep+1][deep] == 0) {
+					arr[i+deep][j+deep] = ++number;
+					i--;
+				}
+			}
+			return arr;
+		}
+			
+		var spir = spiral(9, 5);
+		
+		for (i = 0; i < 5; i++) {
+			console.log(spir[i]);
+		}		
+		
+	</script>
+</body>
+</html>
