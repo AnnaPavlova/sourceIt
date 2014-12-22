@@ -45,11 +45,6 @@ header, footer, article, section, hgroup, nav, figure { display: block; }
 	width: 957px;
 	overflow: hidden;
 }
-.main{	
-	margin: 0 auto;
-	width: 957px;
-	overflow: hidden;
-}
 #footer{
 	margin: 0 auto;
 	width: 957px;
@@ -193,6 +188,11 @@ header, footer, article, section, hgroup, nav, figure { display: block; }
     width: 8px; 
 	height: 8px;       
     transform: rotate(45deg);
+}
+.container {
+	margin: 0 auto;
+	width: 957px;
+	overflow: hidden;
 }
 .small-banner {
 	overflow: auto;
@@ -398,4 +398,131 @@ header, footer, article, section, hgroup, nav, figure { display: block; }
 	font-size: 26px;
 	color: #0073c8;
 	padding: 0;
+}
+.banner-bar {
+	overflow: auto;
+}
+.banner-bar .involved {
+	display: inline-block;
+	position: relative;
+	margin-top: 9px;
+	margin-left: 127px;
+	width: 210px;
+	background: #f7f7f7;
+	color: #1b1b1b;
+	overflow: hidden;
+	border-radius: 16px;
+}
+.banner-bar .involved .inv-line {
+	width: 72px;
+	position: absolute;
+	background: #fba841;
+	height: 100%;
+	z-index: 1;
+}
+.banner-bar .involved span {
+	display: block;
+	margin: 8px 58px 8px 50px;
+	font-size: 12px;
+	z-index: 2;
+}
+.banner-bar .involved span em {
+	font-style: normal;
+	font-weight: bold;
+}
+.banner-bar .left {
+	display: inline-block;	
+	margin-top: 7px;
+	margin-left: 6px;
+	background: #f7f7f7;	
+	color: #1b1b1b;
+	border-radius: 16px;
+	background: #262626;
+}
+.banner-bar .left span {
+	display: block;
+	padding: 8px 13px 8px 35px;
+	color: #ffffff;
+	background: url(../images/clock.png) no-repeat;
+	left: 0;
+}
+.main{	
+	margin: 0 auto;
+	width: 923px;
+	overflow: hidden;
+	padding: 18px 19px 15px 15px;
+	background: #00345d;
+	border-radius: 16px;
+	color: #ffffff;
+}
+.main #content {
+	width: 608px;
+	float: left;
+}
+.main #content h2 {
+	margin: 0;
+	font-family: Myriad Pro;
+	font-size: 28.69px;
+	font-weight: bold;
+	font-stretch: condensed;
+}
+.main .sidebar {
+	width: 295px;
+	float: right;
+}
+.works .tabset{
+	padding: 0;
+	margin: 15px 0 0 57px;
+	list-style: none;	
+	background: #145680;
+	font-size: 0;
+	display: inline-block;
+	border-radius: 20px;
+}
+.works .tabset li{
+	display: inline-block;
+}
+.works .tabset a{
+	display: inline-block;
+	padding: 7px 27px 10px 27px;
+	font-family: Myriad Pro;
+	font-size: 20px;
+	font-stretch: condensed;		
+	color: #ffffff;
+}
+.works .tabset .active a{
+	position: relative;
+	background: #0088f0;
+	border-radius: 4px;
+}
+.works .tabset .active a:after{	
+    content: '';
+    position: absolute;
+    background: inherit;     
+	bottom: -4px;
+	left: 45%;
+    width: 8px; 
+	height: 8px;       
+    transform: rotate(45deg);
+}
+.works .tab {
+	display: none;
+}
+.works .tab.active {
+	display: block;
+}
+.works .tab-content {
+	font-size: 0;
+	margin-top: 17px;
+}
+.works .tab-content .work {
+	display: inline-block;
+	width: 274px;
+	padding: 12px 12px 12px 13px;
+	background: #ffffff;
+	border-radius: 14px;
+	margin: 10px 10px 0 0;
+}
+.works .tab-content .work:nth-child(2n) {
+	margin-right: 0;
 }
