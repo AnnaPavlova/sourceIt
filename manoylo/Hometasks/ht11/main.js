@@ -41,12 +41,11 @@
 		var ul = null;
 		var listItem = null;
 		
-		for(i = 0; i < data.length; i++){
+		for(var i = 0; i < data.length; i++){
 			listItem = document.createElement("li");
 		
 			if(data[i] instanceof Array){
-				ul = recursiveList(data[i]);
-				listItem.appendChild(ul);
+				listItem.appendChild(recursiveList(data[i]));
 			}
 			
 			else{
@@ -57,8 +56,6 @@
 		}
 		return list;
 	}
-	
-	
 	
     function recursiveHeadings (data, weight) {
         var fragment = document.createDocumentFragment();
@@ -72,30 +69,25 @@
 		//При ошибке подсвечивать красным соответствующее поле.
 		//Если оба поля заполнены, вывести сообщение об удачной отправке формы
 		
-		document.getElementById(form).onsubmit = function(){
-			checkFields()
-		}
-		
-		function checkFields(){
-			firstName = document.getElementById("first-name").value;
-			lastName = document.getElementById("last-name").value;
+		var form = document.getElementById(form);
+		var inputs = form.getElementsByTagName("input");
+
+		form.addEventListener("submit", function(ev){
+			ev.preventDefault();
 			
-			if(firstName.value == "" && lastName.value == ""){
-				firstName.style.border = "1px solid red";
-				lastName.style.border = "1px solid red";
-				alert("Enter fields!");
-			}
+			var error = false;
 			
-			else if(firstName.value == ""){
-				firstName.style.border = "1px solid red";
-				alert("Enter first name!");
+			for(var i = 0; i < inputs.length; i++){
+				if(inputs[i].value){
+					console.log("input val: " +inputs[i].value);
+					inputs[i].removeAttribute("style");
+				}
+				
+				else{
+					inputs[i].style.border = "1px solid red";
+				}
 			}
-			
-			else if(lastName.value == ""){
-				lastName.style.border = "1px solid red";
-				alert("Enter last name!");
-			}
-		}
+		})
     }
 	
 	//вызывать функции здесь!
