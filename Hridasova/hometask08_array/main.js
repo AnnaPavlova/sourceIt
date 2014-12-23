@@ -22,19 +22,13 @@ function matrix (size) {
     for (var i = 0; i < size;i++) {
 	matrix [i] = [];
 	for (var j = 0; j < size;j++) {
-	if ( i < 5) {
-	matrix [i][j] = [03] * [1];
-	if (i == j) { matrix [i][j] = [01] * [1];}
-	if (i + j == 9) {matrix [i][j] = [02] * [1];}
-	if (i + j >= 10) {matrix [i][j] = [02] * [2];}
-	if (i > j) {matrix [i][j] = [03] * [2];}
-	} else if ( i > 4) {
-	matrix [i][j] = [05] * [1];
-	if (i == j) { matrix [i][j] = [01] * [1];}
-	if (i + j == 9) {matrix [i][j] = [02] *[1];}
-	if (i + j <= 8) {matrix [i][j] = [02] * [3];}
-	if (i < j) {matrix [i][j] = [02] * [2];}
-	}
+	if (i == j) { matrix [i][j] = 1;}
+	else if (i + j == size - 1) {matrix [i][j] = 2;}
+	else if ( i < j && i + j < size) {matrix [i][j] = 3;}	
+	else if (i < j && i + j >=size) {matrix [i][j] = 4;}
+	else if (i > j && i + j < size) {matrix [i][j] = 6;}
+	else if ( i > j && i + j >=size) {matrix [i][j] = 5;}
+	
 	}
 	}
     return matrix;
@@ -44,12 +38,11 @@ function pascal (size) {
     var triangle = [];
     for (var i = 0; i < size; i++) {
 	triangle [i] = [];
-	for (var j = 0; j < size; j++) {
+	for (var j = 0; j <= i; j++) { /*j<=i дает треугольник*/
 	if (j == 0 || i == j) {
 	triangle [i][j] = 1;
-	} else if (i > j) {
+	} else {
 	triangle [i][j] = triangle[i - 1][j] + triangle[i - 1][j - 1];
-	
 	}
 	}
 	}
