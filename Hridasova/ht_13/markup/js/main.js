@@ -4,7 +4,8 @@ $(document).ready(function() {
 	$('ul').each(function() {
 		var element = $(this).find('li:odd');
 		element.each(function(index) {
-			$(this).prepend(index + " ");
+			var n = index+2;
+			$(this).prepend(index+n + " ");
 		});
 	});
 	$('button').click(function(){
