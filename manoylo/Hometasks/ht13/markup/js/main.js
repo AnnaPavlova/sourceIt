@@ -1,15 +1,16 @@
 $(document).ready(function(){
-	function equalHeight(parent, target){
-		var parent = $(parent),
-		target = $(target),
+	function equalHeight(col){
+		var target = $(col),
 		maxHeight = 0;
 
 		target.each(function(){
-			if($(this).height() > maxHeight){
-				maxHeight = $(this).height();
-				console.log(maxHeight);
+			var thisHeight = $(this).height();
+			if(thisHeight > maxHeight){
+				maxHeight = thisHeight;
 			}
 		});
+		
+		target.height(maxHeight);
 	}
 	
 	function listItemColor(){
@@ -41,7 +42,8 @@ $(document).ready(function(){
 	}
 
 	function initFunc(){
-		equalHeight(".container", ".box");
+		equalHeight(".container .box");
+		equalHeight(".container .block");
 		listItemColor();
 		clearForm();
 		selectListItem();
