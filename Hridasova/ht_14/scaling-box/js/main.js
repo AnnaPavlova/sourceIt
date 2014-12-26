@@ -22,24 +22,17 @@ $(function(){
 			width = box.width();
 			i1 = Math.abs(top - boxTop);
 			j1 = Math.abs(left - boxLeft);
-			console.log('top: ', top,'left: ', left);
-			console.log('boxTop: ', boxTop,'boxLeft: ', boxLeft);
-			console.log('height: ', height,'width: ', width);
-			console.log('i1: ', i1,'j1: ', j1);
 		})
 		
 		btnBlock.on('mousemove', function(ev){
 			if(flag){
 				x2 = parseInt(ev.clientX);
 				y2 = parseInt(ev.clientY);
-				console.log('x2: ', x2, 'y2: ', y2);
 				$(this).css({'top': top + (y2-y1), 'left': left + (x2-x1)});
 				i2 = Math.abs((top + (y2-y1)) - boxTop);
 				j2 = Math.abs((left + (x2-x1)) - boxLeft);
 				box.height(height + (i2 - i1));
 				box.width(width - (j2 - j1));
-				console.log('i2: ', i2,'j2: ', j2);
-				console.log('i2-i1: ', (i2 - i1),'j2-i1: ', (j2 - j1));
 			}
 		})
 		
@@ -48,7 +41,6 @@ $(function(){
 			$(this).css({'top': top + (y2-y1), 'left': left + (x2-x1)});
 			box.height(height + (i2 - i1));
 			box.width(width - (j2 - j1));
-			console.log('height2: ', box.height(), 'width2: ', box.width());
 		})
 	}
 })
