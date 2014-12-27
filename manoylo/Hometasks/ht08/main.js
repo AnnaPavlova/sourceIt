@@ -8,44 +8,75 @@ pascalTriangleHolder.innerHTML = render(pascal(10));
 
 function multiplicationTable(size) {
     var table = [];
-    for (var i = 0; i < size; i++) {
-	table [i] = [];
-	for (var j = 0; j < size; j++) {
-	table [i][j] = (i+1) * (j+1);
+    var i, j, row;
+	
+	for(i = 1; i <= size; i++){
+		row = [];
+		for(j = 1; j <= size; j++){
+			row.push(i*j);
+		}
+		
+		table.push(row);
 	}
-	}
+	
     return table;
 }
 
 function matrix (size) {
     var matrix = [];
-    for (var i = 0; i < size;i++) {
-	matrix [i] = [];
-	for (var j = 0; j < size;j++) {
-	if (i == j) { matrix [i][j] = 1;}
-	else if (i + j == size - 1) {matrix [i][j] = 2;}
-	else if ( i < j && i + j < size) {matrix [i][j] = 3;}	
-	else if (i < j && i + j >=size) {matrix [i][j] = 4;}
-	else if (i > j && i + j < size) {matrix [i][j] = 6;}
-	else if ( i > j && i + j >=size) {matrix [i][j] = 5;}
-	
+
+	var val;
+    
+	for(var i = 0; i < size; i++){
+		matrix[i] = [];
+		
+		for(var j = 0; j < size; j++){
+
+			if (i == j) {
+                val = 1;
+            }
+
+            else if( (size - i - 1) == j){
+				val = 2;
+			}
+			
+			else if(i < j && i < (size - j) ) {
+				val = 3;
+			}
+			
+			else if(i < j) {
+				val = 4;
+			}
+			
+			else if(i > j && (size - i) <= j){
+				val = 5;
+			}
+			
+			else if(i > j && (size - i) > j) {
+				val = 6;
+			}
+			
+			matrix[i][j] = val;
+		}
 	}
-	}
+
     return matrix;
 }
 
 function pascal (size) {
     var triangle = [];
-    for (var i = 0; i < size; i++) {
-	triangle [i] = [];
-	for (var j = 0; j <= i; j++) { /*j<=i дает треугольник*/
-	if (j == 0 || i == j) {
-	triangle [i][j] = 1;
-	} else {
-	triangle [i][j] = triangle[i - 1][j] + triangle[i - 1][j - 1];
-	}
-	}
-	}
+    
+	var val, a, b;
+    for(var i = 0; i < size; i++){
+		triangle[i] = [];
+
+        for(var j = 0; j <= i; j++){
+		
+			triangle[i][j] = 1;
+			
+        }
+    }
+	
     return triangle;
 }
 
