@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title>Upprize</title>
-	<link href="css/style.css" rel="stylesheet"/>
+	<link href="css/style.css" rel="stylesheet"/>	
+	<script src="js/jquery-1.11.2.min.js"></script>
+	<script src="js/main.js"></script>
   </head>
   <body>
 	<div id="wrapper">
@@ -12,7 +14,7 @@
 				<header id="header">
 					<div class="header-bar">
 						<div class="social-autorized">
-							<span class="soc-lable">Войти через:</span>
+							<span class="soc-lable">Войти через:</span>							
 							<ul>
 								<li><a href="#" class="vk"></a></li>
 								<li><a href="#" class="tw"></a></li>
@@ -31,14 +33,18 @@
 					</div>
 					<div class="header-nav">
 						<h1 class="logo">Upprize</h1>
-						<nav id="nav">
-							<a href="#">Главная</a>
-							<a href="#" class="active">Все конкурсы</a>			
-							<a href="#">Призы</a>
-							<a href="#">Архив</a>
-							<a href="#">Участники</a>			
-							<a href="#">Победители</a>
-						</nav>
+						<div class="nav-wrap1">
+							<div class="nav-wrap2">
+								<nav id="nav">
+									<a href="#">Главная</a>
+									<a href="#" class="active">Все конкурсы</a>			
+									<a href="#">Призы</a>
+									<a href="#">Архив</a>
+									<a href="#">Участники</a>			
+									<a href="#">Победители</a>
+								</nav>
+							</div>	
+						</div>			
 					</div>
 				</header>
 				<div class="container">
@@ -54,9 +60,9 @@
 						</div>
 						<div class="contact-us">
 							<ul class="social">
-								<li><a href="#" class="vk soc"></a><span class="lable">мы в контакте</span></li>
-								<li><a href="#" class="mr soc"></a><span class="lable">на mail.ru</span></li>
-								<li><a href="#" class="fb soc"></a><span class="lable">в facebook</span></li>
+								<li><a href="#" class="vk"><span class="lable">мы в контакте</span></a></li>
+								<li><a href="#" class="mr"><span class="lable">на mail.ru</span></a></li>
+								<li><a href="#" class="fb"><span class="lable">в facebook</span></a></li>
 							</ul>
 							<form class="banner-form" action="#">
 								<fieldset>
@@ -110,8 +116,10 @@
 								<span>Участвует <em>3456</em></span>
 							</div>
 							<div class="left"><span>Осталось <time>27 ч 12 сек</time></span></div>
-							<button class="involve">Участвовать</button>					
-							<button class="vote">Голосовать</button>					
+							<div class="buttons">
+								<button class="involve">Участвовать</button>					
+								<button class="vote">Голосовать</button>					
+							</div>
 						</div>
 				</div>
 				<div class="main">
@@ -139,26 +147,26 @@
 										<div class="work">
 											<img src="images/work.jpg" alt=""/>
 											<h3>"Весна наступает"</h3>
+											<button class="vote">&#8250; Голосовать</button>
 											<span class="cr">&copy; Наталья Баннова</span>
-											<button class="vote">&gt; Голосовать</button>
 										</div>
 										<div class="work">
 											<img src="images/work.jpg" alt=""/>
 											<h3>"Весна наступает"</h3>
+											<button class="vote">&#8250; Голосовать</button>
 											<span class="cr">&copy; Наталья Баннова</span>
-											<button class="vote">&gt; Голосовать</button>
 										</div>
 										<div class="work">
 											<img src="images/work.jpg" alt=""/>
 											<h3>"Весна наступает"</h3>
+											<button class="vote">&#8250; Голосовать</button>
 											<span class="cr">&copy; Наталья Баннова</span>
-											<button class="vote">&gt; Голосовать</button>
 										</div>
 										<div class="work">
 											<img src="images/work.jpg" alt=""/>
 											<h3>"Весна наступает"</h3>
+											<button class="vote">&#8250; Голосовать</button>
 											<span class="cr">&copy; Наталья Баннова</span>
-											<button class="vote">&gt; Голосовать</button>
 										</div>
 									</section>
 								</div>								
@@ -168,7 +176,7 @@
 						<h2>Что происходит на сайте?</h2>
 						<section class="events">
 							<div class="event">
-								<img src="#" alt=""/>
+								<img src="images/event-img.jpg" alt=""/>
 								<p class="content">Елена поделилась с друзьями розыгрышем Битва городов: Пробуждение красоты</p>
 								<time class="date">27.03.2013</time>
 								<time class="time">17:33</time>
@@ -256,7 +264,5 @@
 			</div>
 		</div>
 	</div>	
-	<script src="js/jquery-1.11.2.min.js"></script>
-	<script src="js/main.js"></script>
   </body>
 </html>
