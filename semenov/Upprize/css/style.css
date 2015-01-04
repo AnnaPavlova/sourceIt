@@ -38,14 +38,9 @@ header, footer, article, section, hgroup, nav, figure { display: block; }
 	position: relative;
 	float: left;
 	left: -50%;
-	background: url(../images/main-fon.jpg) no-repeat;
+	background: url(../images/main-bg-top.png) repeat-x, url(../images/main-bg-bot.png) 0 100% repeat-x, url(../images/main-fon.jpg) repeat-y;
 }
 #header{
-	margin: 0 auto;
-	width: 957px;
-	overflow: hidden;
-}
-#footer{
 	margin: 0 auto;
 	width: 957px;
 	overflow: hidden;
@@ -434,6 +429,7 @@ header, footer, article, section, hgroup, nav, figure { display: block; }
 	font-size: 69px;
 	font-style: normal;
 	font-weight: bold;
+	margin-top: 10px;
 }
 .big-banner .sidebar .item .prize {
 	text-align: center;
@@ -443,6 +439,7 @@ header, footer, article, section, hgroup, nav, figure { display: block; }
 	font-style: normal;
 	text-transform: uppercase;
 	font-weight: bold;
+	line-height: 10px;
 }
 .big-banner .sidebar .item img {
 	float: left;
@@ -457,6 +454,8 @@ header, footer, article, section, hgroup, nav, figure { display: block; }
 	font-size: 26px;
 	color: #0073c8;
 	padding: 0;
+	margin-left: -10px;
+	font-weight: bold;
 }
 .banner-bar {
 	overflow: auto;
@@ -599,6 +598,7 @@ header, footer, article, section, hgroup, nav, figure { display: block; }
 	font-stretch: condensed;		
 	color: #ffffff;
 	text-shadow: 1px 1px #145680;
+	outline-color: transparent;
 }
 .works .tabset .active a{
 	position: relative;
@@ -615,15 +615,14 @@ header, footer, article, section, hgroup, nav, figure { display: block; }
 	height: 8px;       
     transform: rotate(45deg);
 }
-.works .tab {
-	display: none;
+.works .tab {	
+	margin-top: 17px;
 }
 .works .tab.active {
 	display: block;
 }
 .works .tab-content {
-	font-size: 0;
-	margin-top: 17px;
+	font-size: 0;	
 	margin-right: -10px;
 }
 .works .tab-content .work {
@@ -665,14 +664,196 @@ header, footer, article, section, hgroup, nav, figure { display: block; }
 	float: right;
 }
 .main .sidebar {
+	margin-top: 5px;
 	width: 265px;
 	float: right;
 }
 .main .sidebar .event{
-	padding: 18px 20px 15px 9px;
+	padding: 18px 16px 15px 9px;
 	background: url(../images/sb-bg.png) repeat-x;
 	overflow: hidden;
 	color: #ffffff;
+	border-radius: 6px;
+	margin-top: 18px;
+}
+.main .sidebar .event .event-content {
+	float: right;
+	width: 171px;
+}
+.main .sidebar .event .event-content p{
+	font-size: 12px;
+	line-height: 14px;
+	float: left;
+	letter-spacing: 0px;
+	margin: 0;
+	margin-bottom: 4px;
+}
+.main .sidebar .event .event-content time {
+	color: #00afff;
+}
+.main .sidebar .event:hover{
+	background: url(../images/sb-bg-hover.png) repeat-x;
+}
+.main .sidebar .event:hover p{
+	color: #9fdcff;
+	text-decoration: underline;
+}
+#footer{
+	margin: 0 auto;
+	width: 957px;
+	overflow: hidden;
+	margin-top: 8px;
+}
+.big-footer {
+	padding: 12px 12px 12px 17px;
+	background: url(../images/big-footer-bg.png) repeat-x, #ffffff;
+	border-radius: 16px;
+	overflow: hidden;
+	position: relative;
+}
+.big-footer h2 {	
+	margin-top: 4px;
+	font-size: 29px;
+	line-height: 29px;
+	font-family: Myriad Pro, Tahoma Regular, Arial;
+	font-weight: bold;
+	font-stretch: condensed;
+	color: #113a5a;
+}
+.big-footer .winners {
+	margin-top: 16px;
+	float: left;
+}
+.big-footer .winners #l-arrow {
+	float: left;
+	width: 17px;
+	height: 45px;
+	margin: 42px 0 0 0;
+	background: url(../images/slide-arrow.png) no-repeat;
+}
+.big-footer .winners section {
+	float: left;
+	overflow: hidden;
+	font-size: 0;
+	position: relative;
+	width: 524px;
+	height: 167px;
+	margin-left: 17px;
+}
+.big-footer .winners .winner {
+	display: inline-block;
+	width: 137px;
+	overflow: hidden;
 	font-size: 12px;
 	line-height: 12px;
+	float: left;
+	letter-spacing: 0px;
+	position: absolute;
+}
+.big-footer .winners .winner .name {	
+	color: #1b1b1b;
+	border-bottom: 1px dotted #2186b5;
+	margin-top: 16px;
+}
+.big-footer .winners .winner .prize {
+	color: #2186b5;
+	margin: 5px 0 0 0;
+}
+.big-footer .winners #r-arrow {
+	float: left;
+	width: 17px;
+	height: 45px;
+	margin: 42px 0 0 15px;
+	background: url(../images/slide-arrow.png) no-repeat;
+	transform: rotate(180deg);
+}
+.big-footer .take-part {
+	float: right;
+	width: 250px;
+	position: absolute;
+	top: 12px;
+	right: 12px;
+	bottom: 12px;
+	border: 1px solid #a9e5ff;
+	box-shadow: 0 0 5px #a9e5ff;
+	border-radius: 12px;
+	background: url(../images/take-part-bg.png) 0 100% repeat-x, #ffffff;
+	padding: 24px 27px;
+}
+.take-part button {
+	font-size: 26px;
+	line-height: 26px;
+	font-family: Myriad Pro, Tahoma Regular, Arial;
+	font-weight: bold;
+	font-stretch: condensed;
+	padding: 13px 32px 15px 32px;
+	text-transform: uppercase;
+	color: #ffffff;
+	position: relative;
+	border: none;
+	border-radius: 4px;
+	background: #0059cd;
+}
+.take-part button:after {
+	content: '';
+    position: absolute;
+    background: inherit;     
+	left: 98%;
+	top: 38%;
+    width: 10px; 
+	height: 10px;       
+    transform: rotate(45deg);
+}
+.take-part .content {
+	margin: 19px 7px 0;
+	font-size: 12px;
+	line-height: 12px;
+	color: #000000;
+}
+.take-part .won {
+	display: block;
+	margin: 18px 7px 0;
+	font-size: 12px;
+	line-height: 12px;
+	color: #0090ff;
+	font-weight: bold;
+}
+.small-footer {
+	background: url(../images/sm-footer-bg.png);
+	margin-top: -16px;
+	padding: 36px 0 48px 60px;
+	overflow: hidden;
+}
+.small-footer .footer-nav {
+	width: 160px;
+	float: left;
+	margin-top: -8px;
+}
+.small-footer .footer-nav a {
+	display: block;
+	font-size: 12px;
+	line-height: 12px;
+	color: #5ab0d8;
+	margin-top: 8px;
+}
+.small-footer .info {
+	width: 300px;
+	float: left;
+	margin-left: 50px;
+}
+.small-footer .info h3 {
+	margin: 0;	
+	font-size: 18px;
+	line-height: 18px;
+	font-family: Myriad Pro, Tahoma Regular, Arial;
+	font-weight: bold;
+	font-stretch: condensed;
+	text-transform: uppercase;
+	color: #59b0d8;
+}
+.small-footer .info p {
+	margin: 10px 0 0 0;	
+	font-size: 12px;
+	line-height: 12px;
+	color: #c1dae5;
 }

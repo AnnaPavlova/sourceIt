@@ -1,9 +1,12 @@
 $(function (){
 	setActive('#nav a');
+	setActive('.tabset li');
 	autoScaling('#nav a', '#nav');
+	$("#tabs").tabs();
+	slideGallery($('#gallery'), $('.winner'), 48, '#l-arrow', '#r-arrow');
 	
 	function setActive(list) {	
-		$(list).each(function(){
+		$(list).each(function(e){
 			$(this).click(function(index){		
 				$(list).removeClass("active");
 				$(this).addClass("active");
@@ -27,5 +30,37 @@ $(function (){
 			})
 			return result;
 		}	
+	}
+	
+	function slideGallery(container, list, margin, prev, next) {
+		var step = margin + $($(list)[0]).width();
+		var elNumber = Math.round($(container).width() / step);
+		var position = 0;
+		
+		setPosition();	
+		
+		$(prev).on('click', function(e){
+			e.preventDefault();
+			
+			if (position < 0) {			
+				position += step;			
+				setPosition();
+			}
+		})
+				
+		$(next).on('click', function(e){
+			e.preventDefault();
+			if (position > -(step*(list.length-elNumber))) {			
+				position -= step;			
+				setPosition();
+			}			
+		})	
+		
+		function setPosition() {				
+			$(list).each(function(index){
+				$(this).css('left', (index * step + position) + 'px');
+			})			
+		}
+		
 	}
 })

@@ -5,6 +5,7 @@
     <title>Upprize</title>
 	<link href="css/style.css" rel="stylesheet"/>	
 	<script src="js/jquery-1.11.2.min.js"></script>
+	<script src="js/jquery-ui.js"></script>
 	<script src="js/main.js"></script>
   </head>
   <body>
@@ -126,23 +127,24 @@
 					<div id="content">
 						<h2>Конкурсные работы пользователей:</h2>
 						<div class="works">
-								<div class="tabs">
-									<ul class="tabset">
-										<li class="new">							
-											<a href="#one">Новые</a>
-										</li>
-										<li class="popular active">							
-											<a href="#two">Популярные</a>							
-										</li>
-										<li class="special">
-											<a href="#three">Особенные</a>
-										</li>
-										<li class="most-active">
-											<a href="#three">Самые активные</a>
-										</li>
-									</ul>
+							<div id="tabs">
+								<ul class="tabset">
+									<li class="new">							
+										<a href="#tabs-1">Новые</a>
+									</li>
+									<li class="popular">							
+										<a href="#tabs-2">Популярные</a>							
+									</li>
+									<li class="special">
+										<a href="#tabs-3">Особенные</a>
+									</li>
+									<li class="most-active">
+										<a href="#tabs-4">Самые активные</a>
+									</li>
+								</ul>
+								<div class="tab" id="tabs-1">
 								</div>
-								<div class="tab active" id="two">					
+								<div class="tab" id="tabs-2">					
 									<section class="tab-content">
 										<div class="work">
 											<img src="images/work.jpg" alt=""/>
@@ -169,77 +171,104 @@
 											<span class="cr">&copy; Наталья Баннова</span>
 										</div>
 									</section>
-								</div>								
-							</div>
+								</div>	
+								<div class="tab" id="tabs-3">
+								</div>
+								<div class="tab" id="tabs-4">
+								</div>
+							</div>							
+						</div>
 					</div>
 					<aside class="sidebar">
 						<h2>Что происходит на сайте?</h2>
 						<section class="events">
 							<div class="event">
 								<img src="images/event-img.jpg" alt=""/>
-								<p class="content">Елена поделилась с друзьями розыгрышем Битва городов: Пробуждение красоты</p>
-								<time class="date">27.03.2013</time>
-								<time class="time">17:33</time>
+								<div class="event-content">
+									<p class="content">Елена поделилась с друзьями розыгрышем Битва городов: Пробуждение красоты</p>
+									<time class="date">27.03.2013</time>
+									<time class="time">17:33</time>
+								</div>
 							</div>
 							<div class="event">
-								<img src="#" alt=""/>
-								<p class="content">Елена поделилась с друзьями розыгрышем Битва городов: Пробуждение красоты</p>
-								<time class="date">27.03.2013</time>
-								<time class="time">17:33</time>
+								<img src="images/event-img.jpg" alt=""/>
+								<div class="event-content">
+									<p class="content">Елена поделилась с друзьями розыгрышем Битва городов: Пробуждение красоты</p>
+									<time class="date">27.03.2013</time>
+									<time class="time">17:33</time>
+								</div>
 							</div>
 							<div class="event">
-								<img src="#" alt=""/>
-								<p class="content">Елена поделилась с друзьями розыгрышем Битва городов: Пробуждение красоты</p>
-								<time class="date">27.03.2013</time>
-								<time class="time">17:33</time>
+								<img src="images/event-img.jpg" alt=""/>
+								<div class="event-content">
+									<p class="content">Елена поделилась с друзьями розыгрышем Битва городов: Пробуждение красоты</p>
+									<time class="date">27.03.2013</time>
+									<time class="time">17:33</time>
+								</div>
 							</div>
 							<div class="event">
-								<img src="#" alt=""/>
-								<p class="content">Елена поделилась с друзьями розыгрышем Битва городов: Пробуждение красоты</p>
-								<time class="date">27.03.2013</time>
-								<time class="time">17:33</time>
+								<img src="images/event-img.jpg" alt=""/>
+								<div class="event-content">
+									<p class="content">Елена поделилась с друзьями розыгрышем Битва городов: Пробуждение красоты</p>
+									<time class="date">27.03.2013</time>
+									<time class="time">17:33</time>
+								</div>
 							</div>
 							<div class="event">
-								<img src="#" alt=""/>
-								<p class="content">Елена поделилась с друзьями розыгрышем Битва городов: Пробуждение красоты</p>
-								<time class="date">27.03.2013</time>
-								<time class="time">17:33</time>
+								<img src="images/event-img.jpg" alt=""/>
+								<div class="event-content">
+									<p class="content">Елена поделилась с друзьями розыгрышем Битва городов: Пробуждение красоты</p>
+									<time class="date">27.03.2013</time>
+									<time class="time">17:33</time>
+								</div>
 							</div>
 							<div class="event">
-								<img src="#" alt=""/>
-								<p class="content">Елена поделилась с друзьями розыгрышем Битва городов: Пробуждение красоты</p>
-								<time class="date">27.03.2013</time>
-								<time class="time">17:33</time>
+								<img src="images/event-img.jpg" alt=""/>
+								<div class="event-content">
+									<p class="content">Елена поделилась с друзьями розыгрышем Битва городов: Пробуждение красоты</p>
+									<time class="date">27.03.2013</time>
+									<time class="time">17:33</time>
+								</div>
 							</div>
 						</section>
 					</aside>
 				</div>
 				<footer id="footer">
 					<div class="big-footer">
-						<h2>Счастливые победители</h2>
 						<div class="winners">
-							<a href="#" class="l-arrow"></a>
-							<section>
-								<div class="winner">
-									<a href="#"><img src="#" alt=""/></a>
-									<span class="name">Екатерина Кондратьева</span>
-									<p class="prize">Выиграла напольную вешалку</p>
-								</div>
-								<div class="winner">
-									<a href="#"><img src="#" alt=""/></a>
-									<span class="name">Екатерина Кондратьева</span>
-									<p class="prize">Выиграла напольную вешалку</p>
-								</div>
-								<div class="winner">
-									<a href="#"><img src="#" alt=""/></a>
-									<span class="name">Екатерина Кондратьева</span>
-									<p class="prize">Выиграла напольную вешалку</p>
-								</div>
+							<h2>Счастливые победители</h2>
+							<a href="#" id="l-arrow"></a>
+							<section id="gallery">
+									<div class="winner w1">
+										<a href="#"><img src="images/winner.png" alt=""/></a>
+										<span class="name">Екатерина Кондратьева</span>
+										<p class="prize">&#8250; Выиграла напольную вешалку 1</p>
+									</div>
+									<div class="winner w2">
+										<a href="#"><img src="images/winner.png" alt=""/></a>
+										<span class="name">Екатерина Кондратьева</span>
+										<p class="prize">&#8250; Выиграла напольную вешалку 2</p>
+									</div>
+									<div class="winner w3">
+										<a href="#"><img src="images/winner.png" alt=""/></a>
+										<span class="name">Екатерина Кондратьева</span>
+										<p class="prize">&#8250; Выиграла напольную вешалку 3</p>
+									</div>
+									<div class="winner w4">
+										<a href="#"><img src="images/winner.png" alt=""/></a>
+										<span class="name">Екатерина Кондратьева</span>
+										<p class="prize">&#8250; Выиграла напольную вешалку 4</p>
+									</div>
+									<div class="winner w5">
+										<a href="#"><img src="images/winner.png" alt=""/></a>
+										<span class="name">Екатерина Кондратьева</span>
+										<p class="prize">&#8250; Выиграла напольную вешалку 5</p>
+									</div>
 							</section>
-							<a href="#" class="r-arrow"></a>
+							<a href="#" id="r-arrow"></a>
 						</div>
 						<div class="take-part">
-							<button>Стать участником</button>
+							<button>Стань участником</button>
 							<p class="content">Добавляйте работы и просите друзей проголосовать за вас! 
 							А мы со своей стороны проследим за честностью конкурса и проконтролируем вручение призов! </p>
 							<a href="#" class="won">173 человекa уже выиграли в 87 конкурсах</a>
@@ -247,15 +276,15 @@
 					</div>
 					<div class="small-footer">
 						<nav class="footer-nav">
-							<a href="#">О компании</a>
-							<a href="#">Блог проекта</a>
-							<a href="#">Контактная информация</a>
+							<a href="#">&#8250; О компании</a>
+							<a href="#">&#8250; Блог проекта</a>
+							<a href="#">&#8250; Контактная информация</a>
 						</nav>
-						<div class="for-users">
+						<div class="for-users info">
 							<h3>Пользователям</h3>
 							<p>Openboom — это 100% честные конкурсы и розыгрыши призов. Ежедневно. Бесплатно.</p>
 						</div>
-						<div class="for-partners">
+						<div class="for-partners info">
 							<h3>Партнерам</h3>
 							<p>С помощью Openboom можно быстро и эффективно продвинуть бренд и продукцию в социальных сетях</p>
 						</div>
