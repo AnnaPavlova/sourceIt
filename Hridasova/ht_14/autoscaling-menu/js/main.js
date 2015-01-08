@@ -1,24 +1,18 @@
 $(function(){
 	setWidth($('#nav'));
+});
+
+function setWidth(ul){
+	var ulWidth = ul.width();
+	var element = ul.find('li > a');
+	var liLength = element.length;
+	var liOuterWidth = element.parent().outerWidth(true);
+	var liWidth = element.parent().width();
+	var itemSpace = (liOuterWidth - liWidth) * liLength;
+	var itemWidth, itemAdd;
 	
-	function setWidth(ul){
-		var ulWidth = ul.width();
-		var element = ul.find('li');
-		var liLength = element.length;
-		var liWidth = 0;
-		var padding, li;
-		
-		element.each(function(i){
-			liWidth += $(this).outerWidth();
-		});
-		
-		if(liWidth < ulWidth){
-			padding = Math.floor((ulWidth - liWidth) / liLength);
-			element.each(function(i){
-			li = element.eq(i).outerWidth();
-			$(this).outerWidth(li + padding);
-			});
-		}
-		
-	}
-})
+	itemWidth = Math.floor((ulWidth - itemSpace)/liLength);
+	itemAdd = Math.floor((ulWidth - itemSpace)%liLength);
+	element.width(itemWidth);
+	element.last().width(itemWidth + itemAdd);
+}

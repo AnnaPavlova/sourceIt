@@ -1,0 +1,34 @@
+body{
+	margin: 0;
+	color: #000;
+	font: 11px Arial, Helvetica, sans-serif;
+	background: #fff;
+}
+img{border-style: none;}
+a{
+	text-decoration: none;
+	color: #000;
+}
+a:hover{text-decoration: underline;}
+input,
+textarea,
+select{
+	font: 100% arial,sans-serif;
+	vertical-align: middle;
+}
+form,fieldset{
+	margin: 0;
+	padding: 0;
+	border-style: none;
+}
+q{quotes:none;}
+q:before{content:''}
+q:after{content:''}
+#wrapper{
+	margin: 0 auto;
+}
+#header{
+
+}
+
+

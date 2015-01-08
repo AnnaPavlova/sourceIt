@@ -38,7 +38,7 @@ function pascal (size) {
     var triangle = [];
     for (var i = 0; i < size; i++) {
 	triangle [i] = [];
-	for (var j = 0; j <= i; j++) { /*j<=i дает треугольник*/
+	for (var j = 0; j <= i; j++) {
 	if (j == 0 || i == j) {
 	triangle [i][j] = 1;
 	} else {

@@ -1,39 +1,55 @@
 $(function(){
-	moveBlock('.box', '#wrapper');
-	
-	function moveBlock(blockClass, containerId){		
-		var container = $(containerId);
-		var block = container.find(blockClass);
-		var x1, y1, x2, y2;
-		var left, top;
+	moveBlock();
+});
+	function moveBlock(){
+		var box = $(".box");
+		var posX = box.position().left;
+		var posY = box.position().top;
 		var flag = false;
-		var width = container.width();
-		var height = container.height();
-		console.log('width: ', width, 'height: ', height);
+		var coordEnterX, coordEnterY;
 		
-		block.on('mousedown', function(ev){
-			x1 = parseInt(ev.clientX);
-			y1 = parseInt(ev.clientY);
+		var maxLeft = box.parent().width() - box.width();
+		var maxTop = box.parent().height() - box.height();
+		
+		box.mousedown(function(ev){
+			coordEnterX = parseInt(ev.pageX);
+			coordEnterY = parseInt(ev.pageY);
 			flag = true;
-			top = $(this).position().top;
-			left = $(this).position().left;
-			console.log('top: ', top,'left: ', left)
-		})
-		
-		block.on('mousemove', function(ev){
-			if(flag){
-				x2 = parseInt(ev.clientX);
-				y2 = parseInt(ev.clientY);
-				$(this).css({'top': top + (y2-y1), 'left': left + (x2-x1)});
-			}	
-		})
-		
-		block.on('mouseup', function(){
+		}).mouseup(function(){
 			flag = false;
-			$(this).css({'top': top + (y2-y1), 'left': left + (x2-x1)});
-		})
+		});
+		
+		$(document).mousemove(function(e){
+		if(flag){
+			var difX = parseInt(e.pageX) - coordEnterX;
+			var difY = parseInt(e.pageY) - coordEnterY;
+			
+			if(posX + difX > maxLeft){
+				box.css({'left': maxLeft})
+			}else{
+				if(posX + difX < 0){
+					box.css({'left': 0})
+				}else{
+					box.css({'left': posX + difX})
+				}
+			}
+			if(posY + difY > maxTop){
+				box.css({'top': maxTop})
+			}else{
+				if(posY + difY < 0){
+					box.css({'top': 0})
+				}else{
+					box.css({'top': posY + difY})
+				}
+			}
+		}
+		}).mouseup(function(){
+			flag = false;
+			posX = box.position().left;
+			posY = box.position().top;
+		});
 	}
-})
+
 
 
 

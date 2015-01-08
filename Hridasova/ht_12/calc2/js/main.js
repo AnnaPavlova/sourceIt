@@ -39,7 +39,7 @@ function calculation() {
 			href = this.getAttribute('href');
 			this.style.border = '1px solid green';
 		});
-		operator[i].style.border = '1px solid red';
+		
 	}
 	btnCalc.addEventListener('click', function() {
 		var firstValue = parseInt(document.getElementById('first-value').value, 10);
