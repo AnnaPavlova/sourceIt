@@ -18,7 +18,8 @@ $(document).ready(function(){
 	}
 	
 	function clearForm(){
-		$(".btn-clean").on("click", function(){
+		$(".btn-clean").on("click", function(e){
+			e.preventDefault();
 			$("#form input[type='text']").val("");
 			$("#form input[type='password']").val("");
 		});
