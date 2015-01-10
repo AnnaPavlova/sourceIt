@@ -56,12 +56,10 @@ $(document).ready(function(){
 				clearAttr = attr.replace("#",''),
 				tabContentId = tabContent.attr("id");
 				
-				if(tabContentId == clearAttr){
-					alert(1);
-				}
-				
-				console.log(clearAttr);
-				console.log(tabContentId);
+				$(this).parents(".tabset").find("li").removeClass("active");
+				$(this).parent().addClass("active");
+				tabContent.hide();
+				$("body").find("#"+clearAttr).show();
 		});
 	}
 	
