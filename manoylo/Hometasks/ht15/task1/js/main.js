@@ -53,13 +53,12 @@ $(document).ready(function(){
 			e.preventDefault();
 		
 			var attr = $(this).attr("href"),
-				clearAttr = attr.replace("#",''),
-				tabContentId = tabContent.attr("id");
+				tabContentId = tabContent.attr("id"); 
 				
 				$(this).parents(".tabset").find("li").removeClass("active");
 				$(this).parent().addClass("active");
 				tabContent.hide();
-				$("body").find("#"+clearAttr).show();
+				$(attr).show();
 		});
 	}
 	
