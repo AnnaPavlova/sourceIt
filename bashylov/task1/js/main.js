@@ -57,15 +57,15 @@ $ (function (){
 		console.log(allLi)
 
 		allTab.hide();
-		$("#tab1").show()
-
+		var defaulTab = $(".tabset .active").children("a").attr("href");
+		console.log(defaulTab)
+		$(defaulTab).show()
+		
 		links.click(function(){
 			var currentLi = $(this).parent()
 			var contId = $(this).attr("href");
-			console.log(contId)
-			if (currentLi.hasClass("active")){
-				
-			} else {
+
+			if (!currentLi.hasClass("active")){
 				allLi.removeClass("active");
 				currentLi.addClass("active");
 				console.log(allLi);
