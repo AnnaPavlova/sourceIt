@@ -35,11 +35,11 @@ function tabSet(tabs) {
 	
 	function setTabContent(tabNav, tabContent){
 		$(tabNav).each(function(){
-			$(tabContent).css('display', 'none');
+			$(tabContent).hide();
 			$(this).click(function(e){
 				e.preventDefault();
 				$(tabContent).css('display', 'none');
-				$($(this).attr('href')).css('display', 'block');
+				$($(this).attr('href')).show();
 			});
 		});		
 	}	
