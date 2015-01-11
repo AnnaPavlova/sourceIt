@@ -37,21 +37,21 @@ function slider(gallery, pagNumbers, prevButton, nextButton, gallaryWidth){
 	pagNumbers.each(function(index){
 		$(pagNumbers[index]).on('click', function(){
 			current = -index;
-			setSlide(current);			
+			setSlide();			
 		})
 	})
 
 	prevButton.on('click', function(){
 		if(current < 0){			
 			current++;	
-			setSlide(current);
+			setSlide();
 		}
 	});
 
 	nextButton.on('click', function(){
-		if(current > -pagNumbers.length + 1){			
-			current--;	
-			setSlide(current);
+		if(current > -pagNumbers.length + 1){	
+			current--;
+			setSlide();
 		}
 	});
 
