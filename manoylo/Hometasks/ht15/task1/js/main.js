@@ -62,10 +62,20 @@ $(document).ready(function(){
 		});
 	}
 	
+	function slider(){
+		var arrowLeft = $(".controls .left"),
+			arrowRight = $(".controls .right");
+			
+			arrowLeft.on("click", function(){
+				$(".carousel ul").css({marginLeft: "-100px"});
+			});
+	}
+	
 	function init(){
 		accordion();
 		openClose();
 		tabs();
+		slider();
 	}
 	
 	init();

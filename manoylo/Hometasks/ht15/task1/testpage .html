@@ -15,11 +15,55 @@
 			font-weight: bold;
 		}
 		
+		.carousel{
+			width: 302px;
+			overflow: hidden;
+			border: 1px solid black;
+			box-sizing: border-box;
+		}
+		
+		.carousel ul{
+			font-size: 0;
+			margin: 0;
+			padding: 0;
+			white-space: nowrap;
+			transition: all 0.3s ease-in-out;
+		}
+		
+		.carousel ul li{
+			display: inline-block;
+			width: 100px;
+			height: 100px;
+			line-height: 100px;
+			font-size: 25px;
+			border: 1px solid red;
+			box-sizing: border-box;
+			text-align: center;
+		}
+		
 	</style>
 </head>
 <body>
 	<div id="wrapper">
 		<div class="main">
+			<div class="carousel">
+				<ul>
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+					<li>5</li>
+					<li>6</li>
+					<li>7</li>
+					<li>8</li>
+					<li>10</li>
+				</ul>
+				<div class="controls">
+					<a href="javascript:void(0);" class="left">left</a>
+					<a href="javascript:void(0);" class="right">right</a>
+				</div>
+			</div>
+		
 			<ul class="accordion">
 				<li>
 					<a href="#">link1</a>
