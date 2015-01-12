@@ -18,7 +18,6 @@ function multiplicationTable(size) {
 }
 
 function matrix (size) {
-	size=20
     var matrix = [];
 		for (var i=0; i<size; i++){
 			matrix[i]=[];
@@ -42,19 +41,19 @@ function matrix (size) {
 }
 
 function pascal (size) {
-    var pascal = [];
-		for (var i=0; i<size; i++){
-			pascal[i]=[];
-			for (j=0; j<size; j++){
-				if (j==0 || i==j){
-					pascal[i][j]=1;
-				} else if (i>j){
-					var a=pascal[i-1][j-1]; var b=pascal[i-1][j];
-					pascal[i][j]=(a+b)
+    var triangle = [];
+    var i,j;
+		for (i=0; i<size; i++){
+			triangle[i]=[];
+			for (j=0; j<=i; j++){
+				if (j===0 || i===j){
+					triangle[i][j]=1;
+				} else {
+					triangle[i][j]=triangle [i-1][j-1] + triangle [i-1][j]
 				}
 			}
 		}
-    return pascal;
+    return triangle;
 }
 function render (array) {
     var rowsQty = array.length;
