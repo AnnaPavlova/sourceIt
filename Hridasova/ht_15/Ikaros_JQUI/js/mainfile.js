@@ -1,14 +1,26 @@
 $(function(){
 	init();
+	setActive($('.tabset li a'));
 });
+
+function setActive(el){
+	el.each(function(){
+		$(this).click(function(){
+			el.parent().removeClass('active');
+			$(this).parent().addClass('active');
+		});
+	});
+}
 
 function init(){
 	var prev = $('.prev');
 	var next = $('.next');
+	var allList = $('.gallery > ul');
 	var element = $('.gallery > ul > li');
 	var elWidth = element.eq(0).width();
 	var firstElement = element.eq(0).position().left;
 	var lastElement = Math.floor(element.last().position().left);
+	var list = element.parent().position().left;
 	
 	
 	firstElement > 20 ? console.log('yes!') : console.log('no!');
@@ -16,11 +28,10 @@ function init(){
 	if(lastElement == 2400){
 	console.log('we see the last one');
 	}else{console.log('we see the first');}	
-	console.log('lastElement', lastElement);
 	console.log('prev', prev);
+	console.log('lastElement', lastElement);
 	console.log('firstElement',firstElement);
-
-
+	
 function slide(par){
 	var element = $('.gallery > ul > li');
 	var elWidth = element.eq(0).width();
