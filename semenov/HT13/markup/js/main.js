@@ -23,7 +23,8 @@ $(".list li:first-child").css("color", "#FF0000");
 
 //3-d task
 
-$(".btn-clean").click(function(){
+$(".btn-clean").click(function(e){
+	e.preventDefault();
 	$("#form")[0].reset();
 });
 
@@ -31,10 +32,8 @@ $(".btn-clean").click(function(){
 
 $("ul").each(function(){
 	$(this).children("li:odd").each(function() {
-		var index = $(this).parent().children().index(this);
-		if(index != 0) {
-			$(this).prepend(index + 1 + " "); 
-		}
+		var index = $(this).index();		
+		$(this).prepend(index + 1 + " "); 
 	});
 });
 
