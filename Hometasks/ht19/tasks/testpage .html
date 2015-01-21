@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+	<title>OOP</title>
+</head>
+<body>
+<div id="goto">
+	<h2>Simple elevator</h2>
+	<p>There is a house with 4 levels. In that house there is an elevator. You can program this elevator to go up or down, depending on what button the user touches inside the elevator.</p>
+	<p>levels can be only numbers: 0,1,2,3 buttons can be strings: '0','1','2','3' possible return values are numbers: -3,-2,-1,0,1,2,3</p>
+	<p>If the elevator is on the ground floor(0th level) and the user touches button '2' the elevator must go 2 levels up, so our function must return 2.</p>
+	<p>If the elevator is on the 3rd level and the user touches button '0' the elevator must go 3 levels down, so our function must return -3.</p>
+	<p>If the elevator is on the 2nd level, and the user touches button '2' the elevator must remain on the same level, so we return 0.</p>
+	<p>We cannot endanger the lives of our passengers, so if we get erronous inputs, our elevator must remain on the same level. So for example:</p>
+	<ul>
+		<li>goto(2,'4') must return 0, because there is no button '4' in the elevator.</li>
+		<li>goto(4,'0') must return 0, because there is no level 4.</li>
+		<li>goto(3,undefined) must return 0.</li>
+		<li>goto(undefined,'2') must return 0.</li>
+		<li>goto([],'2') must return 0 because the type of the input level is array instead of a number.</li>
+		<li>goto(3,{}) must return 0 because the type of the input button is object instead of a number.</li>
+	</ul>
+</div>
+<div id="sum">
+	<h2>Sum of all arguments</h2>
+	<p>Write a function that finds the sum of all its arguments.</p>
+	<p>sum(1, 2, 3) // => 6</p>
+	<p>sum(8, 2) // => 10</p>
+	<p>sum(1, 2, 3, 4, 5) // => 15</p>
+</div>
+<div id="double">
+	<h2>Double the values in an array</h2>
+	<p>Make the double() function return a new array with each value twice as large as the corresponding value in the passed in array.</p>
+	<p>var someNumbers = [1,2,10,57];</p>
+	<p>double(someNumbers); // should return [2,4,20,114]</p>
+</div>
+<div id="pluck">
+	<h2>Pluck</h2>
+	<p>Implement pluck, which takes an array of objects and a property name, and returns an array containing the named property of each object.</p>
+	<p>pluck([{a:1}, {a:2}], 'a') // -> [1,2]</p>
+</div>
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
