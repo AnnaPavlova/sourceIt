@@ -1,0 +1,273 @@
+body{
+	margin: 0;
+}
+img{border-style: none;}
+a{
+	text-decoration: none;
+	color: #000;
+}
+a:hover{text-decoration: underline;}
+input,
+textarea,
+select{
+	font: 100% arial,sans-serif;
+	vertical-align: middle;
+}
+form,fieldset{
+	margin: 0;
+	padding: 0;
+	border-style: none;
+}
+
+#wrapper{
+	min-width:1024px;
+	background: #ffffff;
+}
+#header{
+	width:100%;
+	height:143px;
+	background:url("../images/header.png") 50% 0% no-repeat;
+	posistion:relative;
+}
+.head-bg{
+	background:#cb2a27;
+}
+.header-holder{
+	width:1024px;
+	margin:0 auto;
+}
+.hd-gr{
+	display:block;
+	width:auto;
+	height:143px;
+	background:url("../images/logo.png") no-repeat 50% 0%;
+}
+#header:after{
+	display:block;
+	content: "";
+	clear:both;
+}
+.nav{
+	width:100%;
+	height:44px;
+	background:url("../images/nav.png") ;
+}
+.nav-holder{
+	width:1024px;
+	margin:0 auto;
+}
+.nav ul{
+	margin:0;
+	padding:0;
+	list-style: none;
+}
+.nav ul li{
+	float:left;
+}
+.nav ul li a{
+	font-family:Arial Narrow;
+	color:#ffffff;
+	line-height:30px;
+	font-size:16px;
+	display:inline-block;
+	padding:7px 34px;
+}
+.nav ul li a:hover{
+	background:url("../images/hover-nav.png") 100% 100% no-repeat;
+	background-size: cover;
+	border-radius: 3px;
+}
+.tittle{
+	margin:0;
+	padding:0;
+	position:absolute;
+	left:5px;
+	font-family:Arial Narrow;
+	color:#ffffff;
+	font-size:20px;
+	width:300px;
+}
+.phone{
+	position:absolute;
+	font-size:20px;
+	font-family:Arial Narrow;
+	font-weight:bold;
+	color:#ffffff;
+	right:-25px;
+	width:400px;
+	top:-20px;
+}
+.clear {
+	margin-top: -1px;
+	height: 1px;
+	clear:both;
+	zoom: 1;
+}
+/* Slider */
+.slider {
+	/* Ширина контейнера */
+	width: 900px;
+	/* Внешние тступы сверху и снизу */
+	margin: 50px auto;
+	/* Внутренние отступы для ссылок navy */
+	padding: 0 30px;
+	/* Позиционирование */
+	position: relative;
+	/* Скроем то что выходит за границы */
+	overflow: hidden;
+}
+/* Двойной клик по ссылкам вперед/назад вызывает выделение всех элементов слайдера,
+поэтому предотвращаем это */
+.slider::-moz-selection { background: transparent; color: #fff; text-shadow: none; }
+.slider::selection { background: transparent; color: #fff; text-shadow: none; }
+
+.slide-list {
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+.slide-wrap {
+	position: relative;
+	left: 0px;
+	top: 0;
+	/* максимально возможная ширина обертки слайдера */
+	width: 10000000px;
+}
+.slide-item {
+	/* Ширина слайда */
+	width: 280px;
+	/* Внутренние отступы */
+	padding: 10px;
+	/* Обтекание */
+	float: left;
+}
+.slide-title {
+	line-height: 30px;
+	font-family: Arial;
+	color:#434343;
+	font-size:12px;
+	display: block;
+	font-weight:bold;
+}
+
+/* навигация вперед/назад */
+.navy {
+	/* абсолютное позиционирование */
+	position: absolute;
+	top: 0;
+	z-index: 1;
+	height: 100%;
+	/* ширина ссылок */
+	width: 30px;
+	cursor: pointer;
+}
+.prev-slide {
+	left: 0;
+	background: #ffffff url(../bg/left-arrow.png) 11px 40% no-repeat;
+}
+.next-slide {
+	right: 0;
+	background: #ffffff url(../bg/right-arrow.png) 13px 40% no-repeat;
+}
+.navy.disable {
+	background: #ffffff;
+}
+
+/* навигация старт/пауза */
+.auto {
+	width: 7px;
+	height: 11px;
+	cursor: pointer;
+	margin: 10px auto;
+}
+.play {
+	background: url(../bg/play.png) center no-repeat;
+}
+.pause {
+	background: url(../bg/pause.png) center no-repeat;
+}
+#main{
+	width:1024px;
+	margin:0 auto;
+}
+.left-menu{
+	float:left;
+	width:209px;
+	background: url("../images/left-menu-bg.png");
+	box-sizing: border-box;
+}
+.left-menu ul{
+	list-style:none;
+	margin:0;
+	padding:0;
+	background: url("../images/menubg.png") no-repeat;
+}
+.left-menu .menu{
+	font-weight:bold;
+	font-size:15px;
+	color:#ffffff;
+
+}
+.left-menu ul li{
+	margin:0 auto;
+	width:65%;
+	border-bottom:1px solid #ffffff;
+}
+.left-menu ul li a{
+	line-height: 30px;
+	font-family: Arial;
+	color:#434343;
+	font-size:12px;
+}
+.left-menu ul li a:not([class]):hover{
+	color:#b20e00;
+}
+.left-menu ul li a:not([class]) .active{
+	color:#b20e00;
+}
+#wrapper:after{
+	content: "";
+	clear:both;
+	display:block;
+}
+.all-content{
+	float:right;
+	width:788px;
+}
+.all-content h3{
+	padding:0;
+	margin:0;
+	font-size:20px;
+	color:#292929;
+	font-family: Arial;
+	font-weight: Bold;
+	margin-bottom:10px;
+}
+.product{
+	width:160px;
+	margin-right:34px;
+	float:left;
+	margin-bottom:47px;
+}
+.product:nth-child(5){
+	margin-right:0;
+}
+.product-image{
+
+}
+.product-tittle{
+	padding:0;
+	margin:0;
+	font-family:Arial;
+	font-weight: bold;
+	font-size:15px;
+	color:#292929;
+	line-height: 25px;
+}
+.product span{
+	font-size:13px;
+}
+.money{
+	color:#b20e00;
+	font-family: Arial, Regular;
+}
