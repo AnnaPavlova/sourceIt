@@ -1,7 +1,130 @@
-// html5shiv MIT @rem remysharp.com/html5-enabling-script
-// iepp v1.6.2 MIT @jon_neal iecss.com/print-protector
-/*@cc_on(function(m,c){var z="abbr|article|aside|audio|canvas|details|figcaption|figure|footer|header|hgroup|mark|meter|nav|output|progress|section|summary|time|video";function n(d){for(var a=-1;++a<o;)d.createElement(i[a])}function p(d,a){for(var e=-1,b=d.length,j,q=[];++e<b;){j=d[e];if((a=j.media||a)!="screen")q.push(p(j.imports,a),j.cssText)}return q.join("")}var g=c.createElement("div");g.innerHTML="<z>i</z>";if(g.childNodes.length!==1){var i=z.split("|"),o=i.length,s=RegExp("(^|\\s)("+z+")",
-"gi"),t=RegExp("<(/*)("+z+")","gi"),u=RegExp("(^|[^\\n]*?\\s)("+z+")([^\\n]*)({[\\n\\w\\W]*?})","gi"),r=c.createDocumentFragment(),k=c.documentElement;g=k.firstChild;var h=c.createElement("body"),l=c.createElement("style"),f;n(c);n(r);g.insertBefore(l,
-g.firstChild);l.media="print";m.attachEvent("onbeforeprint",function(){var d=-1,a=p(c.styleSheets,"all"),e=[],b;for(f=f||c.body;(b=u.exec(a))!=null;)e.push((b[1]+b[2]+b[3]).replace(s,"$1.iepp_$2")+b[4]);for(l.styleSheet.cssText=e.join("\n");++d<o;){a=c.getElementsByTagName(i[d]);e=a.length;for(b=-1;++b<e;)if(a[b].className.indexOf("iepp_")<0)a[b].className+=" iepp_"+i[d]}r.appendChild(f);k.appendChild(h);h.className=f.className;h.innerHTML=f.innerHTML.replace(t,"<$1font")});m.attachEvent("onafterprint",
-function(){h.innerHTML="";k.removeChild(h);k.appendChild(f);l.styleSheet.cssText=""})}})(this,document);@*/
+jQuery(document).ready(function(){
+    openclose($(".btn-toggle"), $(".drop-menu"));
+    valuta($("#uah"), $("#euro"),  $(".money"));
+    function htmSlider(){
+        /* Зададим следующие переменные */
 
+        /* обертка слайдера */
+        var slideWrap = jQuery('.slide-wrap');
+        /* ссылки на предудыщий иследующий слайд */
+        var nextLink = jQuery('.next-slide');
+        var prevLink = jQuery('.prev-slide');
+
+        var playLink = jQuery('.auto');
+
+        var is_animate = false;
+
+        /* ширина слайда с отступами */
+        var slideWidth = jQuery('.slide-item').outerWidth();
+
+        /* смещение слайдера */
+        var newLeftPos = slideWrap.position().left - slideWidth;
+
+        /* Клик по ссылке на следующий слайд */
+        nextLink.click(function(){
+            if(!slideWrap.is(':animated')) {
+
+                slideWrap.animate({left: newLeftPos}, 500, function(){
+                    slideWrap
+                        .find('.slide-item:first')
+                        .appendTo(slideWrap)
+                        .parent()
+                        .css({'left': 0});
+                });
+
+            }
+        });
+
+        /* Клик по ссылке на предыдующий слайд */
+        prevLink.click(function(){
+            if(!slideWrap.is(':animated')) {
+
+                slideWrap
+                    .css({'left': newLeftPos})
+                    .find('.slide-item:last')
+                    .prependTo(slideWrap)
+                    .parent()
+                    .animate({left: 0}, 500);
+
+            }
+        });
+
+
+        /* Функция автоматической прокрутки слайдера */
+        function autoplay(){
+            if(!is_animate){
+                is_animate = true;
+                slideWrap.animate({left: newLeftPos}, 500, function(){
+                    slideWrap
+                        .find('.slide-item:first')
+                        .appendTo(slideWrap)
+                        .parent()
+                        .css({'left': 0});
+                    is_animate = false;
+                });
+            }
+        }
+
+        /* Клики по ссылкам старт/пауза */
+        playLink.click(function(){
+            if(playLink.hasClass('play')){
+                playLink.removeClass('play').addClass('pause');
+                jQuery('.navy').addClass('disable');
+                timer = setInterval(autoplay, 1000);
+            } else {
+                playLink.removeClass('pause').addClass('play');
+                jQuery('.navy').removeClass('disable');
+                clearInterval(timer);
+            }
+        });
+
+    }
+    function openclose(btn, content){
+        $(content).css("display", "none");
+        console.log(btn, content)
+        $(btn).on("click", function(e){
+            e.preventDefault();
+            $(content).slideToggle("slow");
+        });
+    };
+
+    function valuta(uah, euro, money){
+        var toeuro = 29;
+        var touah = 28.87;
+        var activeval = $(".active-val");
+        euro.addClass('active')
+        euro.on("click", function() {
+            activeval.text('euro')
+            uah.removeClass('active');
+
+            if(euro.attr('class') != 'active') {
+                euro.addClass("active");
+                console.log(euro.attr('class'))
+                money.each(function (i){
+                    var crntmnt = $(money[i]).html() * touah;
+                    crntmnt = crntmnt.toFixed(2);
+                    $(money[i]).text(crntmnt);
+                })
+            }
+
+        })
+
+        uah.on("click", function() {
+            euro.removeClass('active')
+            if(uah.attr('class') != 'active') {
+                activeval.text('uah')
+                uah.addClass("active");
+                money.each(function (i) {
+                    console.log(money[i]);
+                    var crntmnt = $(money[i]).html() / toeuro;
+                    crntmnt = crntmnt.toFixed(2);
+                    $(money[i]).text(crntmnt);
+                })
+            }
+
+        })
+        }
+
+    /* иницилизируем функцию слайдера */
+    htmSlider();
+});
