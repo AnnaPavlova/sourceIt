@@ -203,7 +203,15 @@ border-radius: 3px 3px 3px 3px;
 }
 .raffle-block{
 	width:959px;
-	background:url("../images/upprize-bg.png") no-repeat;
+background: #a4b357;
+background: -moz-linear-gradient(top,  #a4b357 16%, #75890c 61%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(16%,#a4b357), color-stop(61%,#75890c));
+background: -webkit-linear-gradient(top,  #a4b357 16%,#75890c 61%);
+background: -o-linear-gradient(top,  #a4b357 16%,#75890c 61%);
+background: -ms-linear-gradient(top,  #a4b357 16%,#75890c 61%);
+background: linear-gradient(to bottom,  #a4b357 16%,#75890c 61%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a4b357', endColorstr='#75890c',GradientType=0 );
+	margin-bottom:3px;
 	-webkit-border-radius: 20px 20px 20px 20px;
 	border-radius: 20px 20px 20px 20px;
 	float:left;

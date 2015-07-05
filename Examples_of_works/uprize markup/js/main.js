@@ -13,5 +13,23 @@ $(function () {
 			width: "toggle"
 		});
 	});
+	
+	var str = 'Hello, in this topic i want to ask you about ';
+
+	function capcha(){
+		return Math.random().toString(36);
+	}
+	console.log(capcha());
+	for(var i = 0; i < Infinity;  i++){
+		var zaa = prompt('введите данные');
+		var arr = [];
+		arr.push(parseInt(zaa));
+		var sum =+ arr[i-1];
+		if(zaa == false){
+			break;
+		}
+		alert(sum);
+	}
+	
 });
 	

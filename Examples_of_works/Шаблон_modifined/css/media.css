@@ -1,0 +1,15 @@
+.left-positioner{
+  	display:none;
+  }
+ #header .middle .right-positioner{
+ 	float:left;
+ } 
+ #header .middle .right-positioner .navigation {
+  	margin-top:0px;
+  }
+
+ #header .middle .right-positioner .navigation li{
+  	width:100%;
+  	font-size:25px;
+  	background:;
+}
